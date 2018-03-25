@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "buggy-golf", "buggy-golf.csproj", "{07BE8401-0109-5DE8-BF62-D66BE3C3D69E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "buggy-golf.Editor", "buggy-golf.Editor.csproj", "{31574438-252E-C4BB-6C60-BADB533078C1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{07BE8401-0109-5DE8-BF62-D66BE3C3D69E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07BE8401-0109-5DE8-BF62-D66BE3C3D69E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07BE8401-0109-5DE8-BF62-D66BE3C3D69E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07BE8401-0109-5DE8-BF62-D66BE3C3D69E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31574438-252E-C4BB-6C60-BADB533078C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31574438-252E-C4BB-6C60-BADB533078C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31574438-252E-C4BB-6C60-BADB533078C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31574438-252E-C4BB-6C60-BADB533078C1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
