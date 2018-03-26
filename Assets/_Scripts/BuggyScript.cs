@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class BuggyScript : MonoBehaviour {
 
+    [Header("Motor and Steering")]
     // Motor and Steering of the wheels
     public List<Axle> axles;
     public float maxTorque;
@@ -12,14 +13,18 @@ public class BuggyScript : MonoBehaviour {
     public string motorAxis;
     public string steeringAxis;
 
+    [Header("Boost")]
     // Boost Propulsion
     public ParticleSystem boostParticles;
+    public int boostParticleCount;
     public float boostForce = 5000f;
     public string boostButton = "Boost";
 
+    [Header("UI")]
     // UI
     public Slider speedometerSlider;
 
+    [Header("Center of Mass")]
     // Center of Mass
     public Vector3 readCenterOfMass;  //
     public Vector3 newCenterOfMass;
@@ -52,6 +57,12 @@ public class BuggyScript : MonoBehaviour {
                 axle.leftWheel.motorTorque = motor;
                 axle.rightWheel.motorTorque = motor;
             }
+        }
+
+        // Handle Boosting
+        if (Input.GetButton(boostButton)) {
+            thisRb.AddRelativeForce(Vector3.forward * boostForce, ForceMode.Force);
+            boostParticles.Emit(boostParticleCount);
         }
     }
 }

@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/_Scenes/Buggy_Testing.unity
+- path: Assets/_Scenes/Prototype_NewBuggy.unity
   isLoaded: 1
   isActive: 1
