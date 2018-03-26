@@ -234,6 +234,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\_Scripts\BuggyScript.cs" />
     <Compile Include="Assets\_Scripts\FromPrototype\BallKiller.cs" />
     <Compile Include="Assets\_Scripts\FromPrototype\BallRespawner.cs" />
     <Compile Include="Assets\_Scripts\FromPrototype\BallScore.cs" />
