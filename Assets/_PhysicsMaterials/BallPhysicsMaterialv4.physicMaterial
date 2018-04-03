@@ -5,8 +5,8 @@ PhysicMaterial:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Ballv3PhysicsMaterial
-  dynamicFriction: 0.2
+  m_Name: BallPhysicsMaterialv4
+  dynamicFriction: 1
   staticFriction: 0
   bounciness: 1
   frictionCombine: 0

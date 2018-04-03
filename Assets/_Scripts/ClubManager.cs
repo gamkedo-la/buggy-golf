@@ -43,4 +43,11 @@ public class ClubManager : MonoBehaviour {
         clubs[activateClub].gameObject.SetActive(true); // Activate the new club
         activeClub = activateClub;
     }
+
+    public void DisableAllClubs() {
+        for (int i = 0; i < clubs.Count; i++)
+        {
+            clubs[i].gameObject.SetActive(false); // Deactivate all clubs
+        }
+    }
 }
