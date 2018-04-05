@@ -13,14 +13,18 @@ public class BallInPlayScript : MonoBehaviour {
     public Camera ballCam;
 
     [Header("Buggy")]
-    public GameObject models;
-    public BuggyScript buggyScript;
+	private GameObject models;
+    private BuggyScript buggyScript;
     public float buggyDeactivateDelay;
-    public ClubManager clubManager;
+	private ClubManager clubManager;
 
     // Use this for initialization
     void Start() {
-
+		GameObject playerGO = GameObject.FindGameObjectWithTag("Player");
+		buggyScript = playerGO.GetComponent<BuggyScript>();
+		GameObject clubsGO = GameObject.FindGameObjectWithTag("ClubManager");
+		clubManager = clubsGO.GetComponent<ClubManager>();
+		models = playerGO.transform.Find("Models").gameObject;
     }    
 
     private void OnCollisionEnter(Collision other) {
