@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class ClubScript : MonoBehaviour {
 
-	// Use this for initialization
+    public Sprite clubSprite;
+    
+    // Use this for initialization
 	void Start () {
 		
 	}
