@@ -6,9 +6,10 @@ public class UIMaster : MonoBehaviour {
 
     public GameObject speedometer;
     public GameObject clubIcon;
-    public GameObject strokeCount;
-    public GameObject courseName;
+    public GameObject strokeCount;    
+    public GameObject holeName;
+    public GameObject holePar;
     public GameObject holeDistance;
-
+    public GameObject currentScore;
 
 }
