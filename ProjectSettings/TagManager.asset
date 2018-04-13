@@ -9,6 +9,17 @@ TagManager:
   - Ground
   - Field
   - ClubManager
+  - HoleManager
+  - ScoreManager
+  - CameraManager
+  - CarManager
+  - BallManager
+  - UIManager
+  - CameraPlayer
+  - CameraBall
+  - CameraPlayReset
+  - CarResetter
+  - CarResetterCage
   layers:
   - Default
   - TransparentFX
@@ -21,8 +32,8 @@ TagManager:
   - CarBallCollider
   - Ball
   - Course
-  - 
-  - 
+  - CarResetter
+  - CarResetCage
   - 
   - 
   - 

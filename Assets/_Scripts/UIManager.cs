@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UIMaster : MonoBehaviour {
+public class UIManager : MonoBehaviour {
 
     public GameObject speedometer;
     public GameObject clubIcon;

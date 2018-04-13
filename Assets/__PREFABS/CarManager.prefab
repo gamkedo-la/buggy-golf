@@ -9,56 +9,45 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1711890134125076}
+  m_RootGameObject: {fileID: 1729671571231620}
   m_IsPrefabParent: 1
---- !u!1 &1711890134125076
+--- !u!1 &1729671571231620
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4382694466485222}
-  - component: {fileID: 114327804457433828}
+  - component: {fileID: 4020705299433776}
+  - component: {fileID: 114849685324913092}
   m_Layer: 0
-  m_Name: HoleManager
-  m_TagString: HoleManager
+  m_Name: CarManager
+  m_TagString: CarManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4382694466485222
+--- !u!4 &4020705299433776
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1711890134125076}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_GameObject: {fileID: 1729671571231620}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114327804457433828
+--- !u!114 &114849685324913092
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1711890134125076}
+  m_GameObject: {fileID: 1729671571231620}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca313c95e9c7c7944b2348e911743232, type: 3}
+  m_Script: {fileID: 11500000, guid: 7873d0304741d4c4cb74808b4b9cf10a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ball: {fileID: 0}
-  player: {fileID: 0}
-  holeManager: {fileID: 114327804457433828}
-  scoreManager: {fileID: 0}
-  uiManager: {fileID: 0}
-  cameraManager: {fileID: 0}
-  carManager: {fileID: 0}
-  ballManager: {fileID: 0}
-  clubManager: {fileID: 0}
-  currentStroke: 0
-  strokeOver: 0

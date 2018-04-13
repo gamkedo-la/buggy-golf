@@ -4,49 +4,52 @@ using UnityEngine;
 
 public class BallInPlayScript : MonoBehaviour {
 
+    public HoleManager holeManager;
+
     [Header("Collisions")]
     public Collider[] carColliders;
     public string ballTag;
-
-    [Header("Cameras")]
-    public Camera carCam;
-    public Camera ballCam;
 
     [Header("Buggy")]
 	private GameObject models;
     private BuggyScript buggyScript;
     public float buggyDeactivateDelay;
 	private ClubManager clubManager;
+    private GameObject playerGO;
+    private GameObject clubsGO;
 
-    // Use this for initialization
+   
     void Start() {
-		GameObject playerGO = GameObject.FindGameObjectWithTag("Player");
+        // Populate our Player, Club, modelm and camera variables Variables
+        holeManager = GameObject.FindGameObjectWithTag("HoleManager").GetComponent<HoleManager>();
+        playerGO = GameObject.FindGameObjectWithTag("Player");
 		buggyScript = playerGO.GetComponent<BuggyScript>();
-		GameObject clubsGO = GameObject.FindGameObjectWithTag("ClubManager");
+		clubsGO = GameObject.FindGameObjectWithTag("ClubManager");
 		clubManager = clubsGO.GetComponent<ClubManager>();
 		models = playerGO.transform.Find("Models").gameObject;
     }    
 
+
     private void OnCollisionEnter(Collision other) {
         if (other.gameObject.tag == ballTag) {
             // Switch from the car camera to the ball camera
-            ballCam.transform.position = carCam.transform.position; // Put cameras in the same place
-            ballCam.gameObject.SetActive(true);
-            carCam.gameObject.SetActive(false);
-
+            holeManager.cameraManager.CameraBallHitSwitch();
+                        
             // Activate the ball for stroke tracking
             BallScript bs = other.gameObject.GetComponent<BallScript>();
             bs.ballActive = true;
 
-            StartCoroutine(BuggyDisable(buggyDeactivateDelay));            
+            StartCoroutine(BuggyDisable(buggyDeactivateDelay)); // Disable the buggy so it doesn't keep hitting the ball       
         }
     }
+
 
     public void BuggyEnable() { // Enable buggy (for stroke reset)
         models.SetActive(true);
         buggyScript.enabled = true; // Return control of Buggy
         clubManager.SetClub(0);     
     }
+
 
     IEnumerator BuggyDisable(float delay) { // Disable the Buggy after ball contact
         buggyScript.enabled = false; // Remove control of Buggy
