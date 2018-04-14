@@ -21,7 +21,8 @@ public class Leaderboards : MonoBehaviour {
     }
 
     /// <summary>
-    /// Adds a score to the leaderboard of the current scene and saves it to the leaderboards file.
+    /// Adds a score to the leaderboard of the current scene and saves it to the leaderboards file. 
+    /// Score is added only if it didn't exist or is greater than the current score.
     /// </summary>
     /// <param name="playerName">The player's name.</param>
     /// <param name="playerScore">The player's score.</param>
@@ -80,6 +81,8 @@ public class Leaderboards : MonoBehaviour {
     /// Deletes the leaderboards file. This clears all leaderboards across all scenes.
     /// </summary>
     public void DeleteLeaderboards() {
+        scores = new Dictionary<string, int>();
+        courseScores = new Dictionary<string, Dictionary<string, int>>();
         File.Delete(Application.persistentDataPath + "/" + leaderboardsFileName);
     }
 
@@ -89,7 +92,14 @@ public class Leaderboards : MonoBehaviour {
     /// <param name="playerName">The player's name.</param>
     /// <returns></returns>
     public int GetScoreByName(string playerName) {
-        Dictionary<string, int> scrs = courseScores[currentSceneName];
+        Dictionary<string, int> scrs;
+
+        if (courseScores.ContainsKey(currentSceneName)) {
+            scrs = courseScores[currentSceneName];
+        }
+        else {
+            return -1;
+        }
 
         if (scrs.ContainsKey(playerName)) {
             return scrs[playerName];
