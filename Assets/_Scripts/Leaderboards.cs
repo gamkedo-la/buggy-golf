@@ -17,7 +17,7 @@ public class Leaderboards : MonoBehaviour {
 
     void Awake() {
         currentSceneName = SceneManager.GetActiveScene().name;
-        LoadAllScores();                      
+        LoadAllLeaderboards();                      
     }
 
     /// <summary>
@@ -27,7 +27,7 @@ public class Leaderboards : MonoBehaviour {
     /// <param name="playerName">The player's name.</param>
     /// <param name="playerScore">The player's score.</param>
     public void AddScore(string playerName, int playerScore) {
-        LoadAllScores();
+        LoadAllLeaderboards();
 
         // Keeps track of scores in the current scene's leaderboard.
         if (scores.ContainsKey(playerName)) {
@@ -39,28 +39,13 @@ public class Leaderboards : MonoBehaviour {
             scores.Add(playerName, playerScore);
         }
 
-        // Sorts the scores in the current scene's leaderboard in descending order.
-        scores = scores.OrderByDescending(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
-
-        // Keeps track of the current scene's leaderboard.
-        if (courseScores.ContainsKey(currentSceneName)) {
-            courseScores[currentSceneName] = scores;
-        }
-        else {
-            courseScores.Add(currentSceneName, scores);
-        }
-
-        // Saves leaderboards to a file.
-        BinaryFormatter binaryFormatter = new BinaryFormatter();
-        FileStream fileStream = File.Create(Application.persistentDataPath + "/" + leaderboardsFileName);
-        binaryFormatter.Serialize(fileStream, courseScores);
-        fileStream.Close();
+        SaveLeaderboard();
     }
     
     /// <summary>
     /// Loads and deserializes all scores across all leaderboards.
     /// </summary>
-    void LoadAllScores() {
+    void LoadAllLeaderboards() {
         if (File.Exists(Application.persistentDataPath + "/" + leaderboardsFileName)) {            
             BinaryFormatter binaryFormatter = new BinaryFormatter();
             FileStream fileStream = File.Open(Application.persistentDataPath + "/" + leaderboardsFileName, FileMode.Open);
@@ -78,9 +63,31 @@ public class Leaderboards : MonoBehaviour {
     }    
 
     /// <summary>
+    /// Sorts and saves current scene's leaderboard to file.
+    /// </summary>
+    void SaveLeaderboard() {
+        // Sorts the scores in the current scene's leaderboard in descending order.
+        scores = scores.OrderByDescending(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
+
+        // Keeps track of the current scene's leaderboard.
+        if (courseScores.ContainsKey(currentSceneName)) {
+            courseScores[currentSceneName] = scores;
+        }
+        else {
+            courseScores.Add(currentSceneName, scores);
+        }
+
+        // Saves leaderboards to a file.
+        BinaryFormatter binaryFormatter = new BinaryFormatter();
+        FileStream fileStream = File.Create(Application.persistentDataPath + "/" + leaderboardsFileName);
+        binaryFormatter.Serialize(fileStream, courseScores);
+        fileStream.Close();
+    }
+
+    /// <summary>
     /// Deletes the leaderboards file. This clears all leaderboards across all scenes.
     /// </summary>
-    public void DeleteLeaderboards() {
+    public void DeleteAllLeaderboards() {
         scores = new Dictionary<string, int>();
         courseScores = new Dictionary<string, Dictionary<string, int>>();
         File.Delete(Application.persistentDataPath + "/" + leaderboardsFileName);

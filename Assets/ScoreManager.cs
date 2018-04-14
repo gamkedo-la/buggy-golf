@@ -17,7 +17,7 @@ public class ScoreManager : MonoBehaviour {
         leaderboards = GetComponent<Leaderboards>();
 
         // Delete leaderboards file.
-        leaderboards.DeleteLeaderboards();
+        leaderboards.DeleteAllLeaderboards();
 
         // Add scores to leaderboards.
         leaderboards.AddScore("Might Morphin Rocket Ranger", 10);
