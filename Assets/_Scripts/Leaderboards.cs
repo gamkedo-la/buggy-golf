@@ -8,16 +8,19 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Leaderboards : MonoBehaviour {
-    [SerializeField] string leaderboardsFileName = "buggy-golf-leaderboards";
+    [SerializeField] string leaderboardsFileName = "buggy-golf.leaderboards";
+    
+    string currentSceneName = "";
 
-    string currentSceneName="";
+    // Holds current scene's leaderboard scores.
+    Dictionary<string, int> leaderboardScores = new Dictionary<string, int>();
 
-    Dictionary<string, int> scores = new Dictionary<string, int>();
-    Dictionary<string, Dictionary<string, int>> courseScores = new Dictionary<string, Dictionary<string, int>>();
+    // Holds all leaderboards across all scenes with ScoreManager.
+    Dictionary<string, Dictionary<string, int>> leaderboardsAcrossScenes = new Dictionary<string, Dictionary<string, int>>();
 
     void Awake() {
         currentSceneName = SceneManager.GetActiveScene().name;
-        LoadAllLeaderboards();                      
+        LoadLeaderboard();                      
     }
 
     /// <summary>
@@ -27,16 +30,16 @@ public class Leaderboards : MonoBehaviour {
     /// <param name="playerName">The player's name.</param>
     /// <param name="playerScore">The player's score.</param>
     public void AddScore(string playerName, int playerScore) {
-        LoadAllLeaderboards();
+        LoadLeaderboard();
 
         // Keeps track of scores in the current scene's leaderboard.
-        if (scores.ContainsKey(playerName)) {
-            if (playerScore > scores[playerName]) {
-                scores[playerName] = playerScore;
+        if (leaderboardScores.ContainsKey(playerName)) {
+            if (playerScore > leaderboardScores[playerName]) {
+                leaderboardScores[playerName] = playerScore;
             }
         }
         else {
-            scores.Add(playerName, playerScore);
+            leaderboardScores.Add(playerName, playerScore);
         }
 
         SaveLeaderboard();
@@ -45,17 +48,17 @@ public class Leaderboards : MonoBehaviour {
     /// <summary>
     /// Loads and deserializes all scores across all leaderboards.
     /// </summary>
-    void LoadAllLeaderboards() {
+    void LoadLeaderboard() {
         if (File.Exists(Application.persistentDataPath + "/" + leaderboardsFileName)) {            
             BinaryFormatter binaryFormatter = new BinaryFormatter();
             FileStream fileStream = File.Open(Application.persistentDataPath + "/" + leaderboardsFileName, FileMode.Open);
 
             // Deserializes leaderboards from a file.
-            courseScores = (Dictionary<string, Dictionary<string, int>>)binaryFormatter.Deserialize(fileStream);
+            leaderboardsAcrossScenes = (Dictionary<string, Dictionary<string, int>>)binaryFormatter.Deserialize(fileStream);
 
             // Load scores on the current scene's leaderboard.
-            if (courseScores.ContainsKey(currentSceneName)) {
-                scores = courseScores[currentSceneName];
+            if (leaderboardsAcrossScenes.ContainsKey(currentSceneName)) {
+                leaderboardScores = leaderboardsAcrossScenes[currentSceneName];
             }
 
             fileStream.Close();
@@ -67,20 +70,20 @@ public class Leaderboards : MonoBehaviour {
     /// </summary>
     void SaveLeaderboard() {
         // Sorts the scores in the current scene's leaderboard in descending order.
-        scores = scores.OrderByDescending(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
+        leaderboardScores = leaderboardScores.OrderByDescending(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
 
         // Keeps track of the current scene's leaderboard.
-        if (courseScores.ContainsKey(currentSceneName)) {
-            courseScores[currentSceneName] = scores;
+        if (leaderboardsAcrossScenes.ContainsKey(currentSceneName)) {
+            leaderboardsAcrossScenes[currentSceneName] = leaderboardScores;
         }
         else {
-            courseScores.Add(currentSceneName, scores);
+            leaderboardsAcrossScenes.Add(currentSceneName, leaderboardScores);
         }
 
         // Saves leaderboards to a file.
         BinaryFormatter binaryFormatter = new BinaryFormatter();
         FileStream fileStream = File.Create(Application.persistentDataPath + "/" + leaderboardsFileName);
-        binaryFormatter.Serialize(fileStream, courseScores);
+        binaryFormatter.Serialize(fileStream, leaderboardsAcrossScenes);
         fileStream.Close();
     }
 
@@ -88,8 +91,8 @@ public class Leaderboards : MonoBehaviour {
     /// Deletes the leaderboards file. This clears all leaderboards across all scenes.
     /// </summary>
     public void DeleteAllLeaderboards() {
-        scores = new Dictionary<string, int>();
-        courseScores = new Dictionary<string, Dictionary<string, int>>();
+        leaderboardScores = new Dictionary<string, int>();
+        leaderboardsAcrossScenes = new Dictionary<string, Dictionary<string, int>>();
         File.Delete(Application.persistentDataPath + "/" + leaderboardsFileName);
     }
 
@@ -101,8 +104,8 @@ public class Leaderboards : MonoBehaviour {
     public int GetScoreByName(string playerName) {
         Dictionary<string, int> scrs;
 
-        if (courseScores.ContainsKey(currentSceneName)) {
-            scrs = courseScores[currentSceneName];
+        if (leaderboardsAcrossScenes.ContainsKey(currentSceneName)) {
+            scrs = leaderboardsAcrossScenes[currentSceneName];
         }
         else {
             return -1;
@@ -122,10 +125,10 @@ public class Leaderboards : MonoBehaviour {
     /// <param name="rank">The player's rank.</param>
     /// <returns></returns>
     public int GetScoreByRank(int rank) {
-        if (scores.Count > 0) rank -= 1;
+        if (leaderboardScores.Count > 0) rank -= 1;
 
-        if (rank < scores.Count) {
-            return scores.ElementAt(rank).Value;
+        if (rank < leaderboardScores.Count) {
+            return leaderboardScores.ElementAt(rank).Value;
         }
         else {
             return -1;
@@ -138,10 +141,10 @@ public class Leaderboards : MonoBehaviour {
     /// <param name="rank">The player's rank.</param>
     /// <returns></returns>
     public string GetNameByRank(int rank) {
-        if (scores.Count > 0) rank -= 1;
+        if (leaderboardScores.Count > 0) rank -= 1;
 
-        if (rank < scores.Count) {
-            return scores.ElementAt(rank).Key;
+        if (rank < leaderboardScores.Count) {
+            return leaderboardScores.ElementAt(rank).Key;
         }
         else {
             return "THIS PLAYER DOES NOT EXIST!!!";
