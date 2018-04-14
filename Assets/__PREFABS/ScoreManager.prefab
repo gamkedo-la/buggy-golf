@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4480488586986752}
   - component: {fileID: 114520509998115436}
+  - component: {fileID: 114067505703776618}
   m_Layer: 0
   m_Name: ScoreManager
   m_TagString: ScoreManager
@@ -40,6 +41,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114067505703776618
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1779417879677158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a7d7b398376e4d48ae0077eacb3133c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leaderboardsFileName: leaderboards
 --- !u!114 &114520509998115436
 MonoBehaviour:
   m_ObjectHideFlags: 1
