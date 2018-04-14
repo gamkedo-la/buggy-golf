@@ -11,7 +11,8 @@ public class ScoreManager : MonoBehaviour {
         //
         // BEGIN Leaderboards Test
         //
-        Debug.Log("Testing Leaderboards!!!");
+        
+        Debug.Log("Begin Testing Leaderboards!!!");        
 
         leaderboards = GetComponent<Leaderboards>();
 
@@ -27,7 +28,7 @@ public class ScoreManager : MonoBehaviour {
 
         Debug.Log(leaderboards.GetScoreByName("Biker Mice From Mars"));
         Debug.Log(leaderboards.GetScoreByName("Cat Dog Octopus"));
-        Debug.Log(leaderboards.GetScoreByName("Does Not Exist!")); // doesn't exist
+        Debug.Log(leaderboards.GetScoreByName("Does Not Exist!")); // player name doesn't exist
 
         Debug.Log(leaderboards.GetNameByRank(1) + " has a score of " + leaderboards.GetScoreByRank(1));
         Debug.Log(leaderboards.GetNameByRank(2) + " has a score of " + leaderboards.GetScoreByRank(2));
@@ -35,13 +36,15 @@ public class ScoreManager : MonoBehaviour {
         Debug.Log(leaderboards.GetNameByRank(4) + " has a score of " + leaderboards.GetScoreByRank(4));
         Debug.Log(leaderboards.GetNameByRank(5) + " has a score of " + leaderboards.GetScoreByRank(5));
 
-        // the following don't exist
+        // the following ranks don't exist
         Debug.Log(leaderboards.GetNameByRank(6) + " has a score of " + leaderboards.GetScoreByRank(6));
         Debug.Log(leaderboards.GetNameByRank(7) + " has a score of " + leaderboards.GetScoreByRank(7));
         Debug.Log(leaderboards.GetNameByRank(8) + " has a score of " + leaderboards.GetScoreByRank(8));
         Debug.Log(leaderboards.GetNameByRank(9) + " has a score of " + leaderboards.GetScoreByRank(9));
         Debug.Log(leaderboards.GetNameByRank(10) + " has a score of " + leaderboards.GetScoreByRank(10));
-
+                
+        Debug.Log("End Testing Leaderboards!!!");
+        
         //
         // END Leaderboards Test
         //
