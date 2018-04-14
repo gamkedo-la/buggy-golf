@@ -8,7 +8,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Leaderboards : MonoBehaviour {
-    [SerializeField] string leaderboardsFileName = "leaderboards";
+    [SerializeField] string leaderboardsFileName = "buggy-golf-leaderboards";
 
     string currentSceneName="";
 
@@ -24,10 +24,11 @@ public class Leaderboards : MonoBehaviour {
     /// Adds a score to the leaderboard of the current scene and saves it to the leaderboards file.
     /// </summary>
     /// <param name="playerName">The player's name.</param>
-    /// <param name="playerScore">The player's score</param>
+    /// <param name="playerScore">The player's score.</param>
     public void AddScore(string playerName, int playerScore) {
         LoadAllScores();
 
+        // Keeps track of scores in the current scene's leaderboard.
         if (scores.ContainsKey(playerName)) {
             if (playerScore > scores[playerName]) {
                 scores[playerName] = playerScore;
@@ -37,8 +38,10 @@ public class Leaderboards : MonoBehaviour {
             scores.Add(playerName, playerScore);
         }
 
+        // Sorts the scores in the current scene's leaderboard in descending order.
         scores = scores.OrderByDescending(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
 
+        // Keeps track of the current scene's leaderboard.
         if (courseScores.ContainsKey(currentSceneName)) {
             courseScores[currentSceneName] = scores;
         }
@@ -46,9 +49,9 @@ public class Leaderboards : MonoBehaviour {
             courseScores.Add(currentSceneName, scores);
         }
 
+        // Saves leaderboards to a file.
         BinaryFormatter binaryFormatter = new BinaryFormatter();
         FileStream fileStream = File.Create(Application.persistentDataPath + "/" + leaderboardsFileName);
-
         binaryFormatter.Serialize(fileStream, courseScores);
         fileStream.Close();
     }
@@ -57,16 +60,19 @@ public class Leaderboards : MonoBehaviour {
     /// Loads and deserializes all scores across all leaderboards.
     /// </summary>
     void LoadAllScores() {
-        if (File.Exists(Application.persistentDataPath + "/" + leaderboardsFileName)) {
+        if (File.Exists(Application.persistentDataPath + "/" + leaderboardsFileName)) {            
             BinaryFormatter binaryFormatter = new BinaryFormatter();
             FileStream fileStream = File.Open(Application.persistentDataPath + "/" + leaderboardsFileName, FileMode.Open);
 
-            Dictionary<string, Dictionary<string, int>> courseScores = 
-                    (Dictionary<string, Dictionary<string, int>>)binaryFormatter.Deserialize(fileStream);
+            // Deserializes leaderboards from a file.
+            courseScores = (Dictionary<string, Dictionary<string, int>>)binaryFormatter.Deserialize(fileStream);
+
+            // Load scores on the current scene's leaderboard.
+            if (courseScores.ContainsKey(currentSceneName)) {
+                scores = courseScores[currentSceneName];
+            }
 
             fileStream.Close();
-
-            this.courseScores = courseScores;
         }
     }    
 
