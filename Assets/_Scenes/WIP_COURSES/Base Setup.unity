@@ -6468,6 +6468,7 @@ GameObject:
   - component: {fileID: 1683744084}
   - component: {fileID: 1683744086}
   - component: {fileID: 1683744085}
+  - component: {fileID: 1683744087}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -6527,6 +6528,24 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1683744083}
+--- !u!114 &1683744087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1683744083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab87ac89360904b48be756e6e866e191, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resettingCar: 0
+  carPlacer: {fileID: 1740108892}
+  placementSpeed: 3
+  rangeXMax: 260
+  rangeXMin: -260
+  rangeYMax: 230
+  rangeYMin: -230
 --- !u!1001 &1695638266
 Prefab:
   m_ObjectHideFlags: 0
@@ -6800,7 +6819,7 @@ GameObject:
   - component: {fileID: 1740108895}
   - component: {fileID: 1740108894}
   m_Layer: 5
-  m_Name: Image
+  m_Name: CarPlacer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
