@@ -61,7 +61,7 @@ GameObject:
   - component: {fileID: 4393832827363776}
   m_Layer: 0
   m_Name: tile-straight-ramp-shallow
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -106,7 +106,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1369712636340020}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 32, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4663348063638558}
@@ -162,7 +162,7 @@ MeshRenderer:
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
+  m_ScaleInLightmap: 0.1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -270,7 +270,7 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1358983862619482}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: ffd17d5c25de52e4d8ce1cc4c27f810c, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -284,7 +284,7 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1273358852565538}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: ffd17d5c25de52e4d8ce1cc4c27f810c, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -298,7 +298,7 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1610882554005388}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: ffd17d5c25de52e4d8ce1cc4c27f810c, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2

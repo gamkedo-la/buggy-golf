@@ -1,15 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour {
 
     public GameObject speedometer;
     public GameObject clubIcon;
-    public GameObject strokeCount;    
-    public GameObject holeName;
-    public GameObject holePar;
-    public GameObject holeDistance;
-    public GameObject currentScore;
+    public Text strokeCount;    
+    public Text holeName;
+    public Text holePar;
+    public Text holeDistance;
+    public Text currentScore;
+    public CarResetter carResetter;
 
+
+    public void UIUpdateStroke(int newStroke) {
+        strokeCount.text = newStroke.ToString();
+    }
 }

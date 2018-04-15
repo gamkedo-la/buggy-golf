@@ -24,16 +24,21 @@ public class HoleManager : MonoBehaviour {
 
     public void Start() {
         currentStroke = 1;
+        uiManager.UIUpdateStroke(currentStroke);
+    }
+
+    public void HolePlayStart() {
+        cameraManager.CameraHoleStart();
+        ball.BallStartStroke();
     }
 
     public void StrokeReset() {
         strokeOver = true; // Use this to keep certain things from happening in other scripts (car control, etc)
         ballManager.ReorientBall(ball); // Keep the ball in position but make it point straight up
         currentStroke++;
+        uiManager.UIUpdateStroke(currentStroke); // Update the stroke count UI
         cameraManager.CameraPlayResetSwitch(); // Change camera to top view to choose starting position
-        ball.carResetter.gameObject.SetActive(true);
-        ball.carResetterCage.gameObject.SetActive(true);
-        ball.carResetter.ResetterStartReset();
+        uiManager.carResetter.ResetterStartReset();
     }
     
 }

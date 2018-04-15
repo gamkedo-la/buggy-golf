@@ -28,17 +28,19 @@ public class BuggyScript : MonoBehaviour {
     // Center of Mass
     public Vector3 readCenterOfMass;  //
     public Vector3 newCenterOfMass;
-    Rigidbody thisRb;
+    public Rigidbody buggyRb;
     public bool adjustCenterOfMass;
 
+    [Header("Reset and Contact")]
+    public BallInPlayScript ballInPlayScript;
 
     public void Start()
     {
         // Read center of mass calculated by Unity. If we choose, change it.
-        thisRb = GetComponent<Rigidbody>();
-        readCenterOfMass = thisRb.centerOfMass;
+        buggyRb = GetComponent<Rigidbody>();
+        readCenterOfMass = buggyRb.centerOfMass;
         if (adjustCenterOfMass){
-            thisRb.centerOfMass = newCenterOfMass;
+            buggyRb.centerOfMass = newCenterOfMass;
         }
     }
 
@@ -61,7 +63,7 @@ public class BuggyScript : MonoBehaviour {
 
         // Handle Boosting
         if (Input.GetButton(boostButton)) {
-            thisRb.AddRelativeForce(Vector3.forward * boostForce, ForceMode.Force);
+            buggyRb.AddRelativeForce(Vector3.forward * boostForce, ForceMode.Force);
             boostParticles.Emit(boostParticleCount);
         }
     }
