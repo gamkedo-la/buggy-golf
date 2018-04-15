@@ -792,16 +792,6 @@ Prefab:
       propertyPath: carRepresentationImage
       value: 
       objectReference: {fileID: 632845946}
-    - target: {fileID: 114454068075152848, guid: 9377268a6f3ffe94da227abfd31b054f,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114256419710208542, guid: 9377268a6f3ffe94da227abfd31b054f,
-        type: 2}
-      propertyPath: speedScaleTune
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9377268a6f3ffe94da227abfd31b054f, type: 2}
   m_IsPrefabParent: 0
