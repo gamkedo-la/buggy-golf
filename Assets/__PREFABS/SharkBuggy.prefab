@@ -1196,8 +1196,8 @@ MonoBehaviour:
     rightWheel: {fileID: 146541389710588976}
     motor: 1
     steering: 0
-  maxTorque: 3000
-  maxSteeringAngle: 30
+  maxTorque: 4000
+  maxSteeringAngle: 50
   motorAxis: Vertical
   steeringAxis: Horizontal
   boostParticles: {fileID: 198475392014952068}
@@ -1206,7 +1206,7 @@ MonoBehaviour:
   boostButton: Boost
   speedometerSlider: {fileID: 0}
   readCenterOfMass: {x: 0, y: 0, z: 0}
-  newCenterOfMass: {x: 0, y: 0.3, z: 0}
+  newCenterOfMass: {x: 0, y: 0.2, z: 0}
   buggyRb: {fileID: 54654430059993738}
   adjustCenterOfMass: 1
   ballInPlayScript: {fileID: 114644250383581668}

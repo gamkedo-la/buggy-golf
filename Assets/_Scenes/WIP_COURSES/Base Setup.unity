@@ -6634,7 +6634,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1535390696}
   m_LocalRotation: {x: 0.7071068, y: 0.000000044703484, z: -0.000000044703484, w: 0.7071068}
-  m_LocalPosition: {x: -5.38, y: 15.4, z: -7.53}
+  m_LocalPosition: {x: -5.38, y: 15.4, z: 0.47}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1328672566}
@@ -9041,7 +9041,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4715364129957868, guid: 0565e125ea9242b43bd82b752bf1ead8, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 16
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 4715364129957868, guid: 0565e125ea9242b43bd82b752bf1ead8, type: 2}
       propertyPath: m_LocalRotation.x
@@ -9068,6 +9068,11 @@ Prefab:
       propertyPath: holeManager
       value: 
       objectReference: {fileID: 1696148134}
+    - target: {fileID: 54858415006406734, guid: 0565e125ea9242b43bd82b752bf1ead8,
+        type: 2}
+      propertyPath: m_AngularDrag
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0565e125ea9242b43bd82b752bf1ead8, type: 2}
   m_IsPrefabParent: 0
