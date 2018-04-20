@@ -19,6 +19,9 @@ public class BuggyScript : MonoBehaviour {
     public int boostParticleCount;
     public float boostForce = 5000f;
     public string boostButton = "Boost";
+    public float accelForce = 5000f;
+    public Vector3 accelForceReadout;
+   // public string boostButton = "Boost";
 
     [Header("UI")]
     // UI
@@ -56,8 +59,8 @@ public class BuggyScript : MonoBehaviour {
                 axle.rightWheel.steerAngle = steering;
             }
             if (axle.steering) {
-                axle.leftWheel.motorTorque = motor;
-                axle.rightWheel.motorTorque = motor;
+                  axle.leftWheel.motorTorque = motor;
+                 axle.rightWheel.motorTorque = motor;
             }
         }
 
@@ -66,6 +69,12 @@ public class BuggyScript : MonoBehaviour {
             buggyRb.AddRelativeForce(Vector3.forward * boostForce, ForceMode.Force);
             boostParticles.Emit(boostParticleCount);
         }
+
+        if (Input.GetAxis(motorAxis) != 0){
+            accelForceReadout = Vector3.forward * accelForce * Input.GetAxis(motorAxis);
+            buggyRb.AddRelativeForce(accelForceReadout, ForceMode.Force);
+        }
+   
     }
 }
 
