@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour {
 
+    public HoleManager holeManager;
     public GameObject speedometer;
     public GameObject clubIcon;
     public Text strokeCount;    
@@ -29,6 +30,10 @@ public class UIManager : MonoBehaviour {
         scorecard.par.text = par.ToString();
         scorecard.gameScore.text = gamescore.ToString();
         scorecard.holeScore.text = holescore.ToString();
+    }
+
+    public void ButtonContinueNextHole() {
+        holeManager.NextHole();
     }
         
     }

@@ -949,7 +949,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 101180915}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1863194788}
+        m_MethodName: ButtonContinueNextHole
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &101180915
@@ -6920,7 +6931,7 @@ MonoBehaviour:
   par: {fileID: 798296040}
   gameScore: {fileID: 1392521295}
   holeScore: {fileID: 544108503}
-  canvas: {fileID: 0}
+  canvas: {fileID: 1002810568}
 --- !u!114 &1002810566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11665,6 +11676,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ba951b621edc4e43bd71cac7a39c174, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  holeManager: {fileID: 1696148134}
   speedometer: {fileID: 1923272987}
   clubIcon: {fileID: 2143760022}
   strokeCount: {fileID: 1214738345}
@@ -14455,7 +14467,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-982480
+  m_Name: pb_Mesh-1128124
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2

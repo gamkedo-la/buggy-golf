@@ -10,6 +10,8 @@ public class scorecardUIScript : MonoBehaviour {
     public Text holeScore;
     public Canvas canvas;
 
+    
+    
     // Use this for initialization
     void Start () {
         canvas = this.GetComponent<Canvas>();
@@ -19,4 +21,6 @@ public class scorecardUIScript : MonoBehaviour {
 	void Update () {
 		
 	}
+
+   
 }
