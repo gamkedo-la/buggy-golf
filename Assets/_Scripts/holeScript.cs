@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class holeScript : MonoBehaviour {
 
+    public GameObject holeDetection;
+    public HoleManager holeManager;
+
+
 	// Use this for initialization
 	void Start () {
 		

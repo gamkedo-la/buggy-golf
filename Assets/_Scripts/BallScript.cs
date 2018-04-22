@@ -8,6 +8,7 @@ public class BallScript : MonoBehaviour {
     public float ballRestLimit = 0.5f; // How little should the ball move before we say it is still?
     public float timeBuffer = 1f; // Preventing instant stroke end at walls, etc.
     public bool ballActive = false; // Has the ball been hit?
+    public string holeTagName = "Hole Detector";
 
     Rigidbody rb;
        
@@ -24,6 +25,15 @@ public class BallScript : MonoBehaviour {
             
         }
 	}
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == holeTagName && ballActive)
+        {
+            holeManager.HoleEnd();
+            Debug.Log("Ball in hole!");
+        }
+    }
 
     public void BallEndStroke() {
         rb.isKinematic = true; // Freeze the ball

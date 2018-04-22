@@ -6,6 +6,8 @@ using UnityEngine;
 public class ScoreManager : MonoBehaviour {
     Leaderboards leaderboards;
 
+    public int localScore = 0;
+
 	// Use this for initialization
 	void Start () {
         //
@@ -49,4 +51,17 @@ public class ScoreManager : MonoBehaviour {
         // END Leaderboards Test
         //
     }
+
+    public void SetLocalScore(int setScore) {
+        localScore = setScore;
+    }
+
+    public void AddLocalScore(int newScore) {
+        localScore = (localScore + newScore);
+    }
+
+    public int GetLocalScore() {
+        return localScore;
+    }
+
 }
