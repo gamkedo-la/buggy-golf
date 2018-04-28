@@ -43,6 +43,7 @@ public class CarController : MonoBehaviour {
 	private int gear;//current gear
 	private Rigidbody rb;
 	Vector3 localCurrentSpeed;
+	public float slowDown = 1000f;//car's deacceleration when not accelerating
 
 	void Start () {
 		rb = GetComponent<Rigidbody>();
@@ -101,8 +102,19 @@ public class CarController : MonoBehaviour {
 
 		if (DriveTrain == DriveType.RWD)
 		{
-			wheels.wheelRR.motorTorque = maxTorque * Input.GetAxis("Vertical") * gasMultiplier;
-			wheels.wheelRL.motorTorque = maxTorque * Input.GetAxis("Vertical") * gasMultiplier;
+			float acc = Input.GetAxis("Vertical");
+			if (Mathf.Abs(acc) <= 0.05f)
+			{
+				wheels.wheelFL.brakeTorque = slowDown;
+				wheels.wheelFR.brakeTorque = slowDown;
+				wheels.wheelRL.brakeTorque = slowDown;
+				wheels.wheelRR.brakeTorque = slowDown;
+			}
+			else
+			{
+				wheels.wheelRR.motorTorque = maxTorque * acc * gasMultiplier;
+				wheels.wheelRL.motorTorque = maxTorque * acc * gasMultiplier;
+			}
 
 			if (localCurrentSpeed.z < -0.1f && wheels.wheelRL.rpm < 10)
 			{//in local space, if the car is travelling in the direction of the -z axis, (or in reverse), reversing will be true
@@ -154,7 +166,7 @@ public class CarController : MonoBehaviour {
 			wheels.wheelRL.brakeTorque = handBrakeTorque;
 			wheels.wheelRR.brakeTorque = handBrakeTorque;
 		}
-		else//letting go of space disables the handbrake
+		else if (Mathf.Abs(Input.GetAxis("Vertical")) > 0.05f && !Input.GetButton("Break"))//letting go of space disables the handbrake
 		{
 			wheels.wheelFL.brakeTorque = 0f;
 			wheels.wheelFR.brakeTorque = 0f;
