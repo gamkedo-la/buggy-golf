@@ -21,6 +21,7 @@ TagManager:
   - CarResetter
   - CarResetterCage
   - HoleDetector
+  - PlayerManager
   layers:
   - Default
   - TransparentFX

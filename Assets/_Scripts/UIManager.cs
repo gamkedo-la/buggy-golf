@@ -21,9 +21,9 @@ public class UIManager : MonoBehaviour {
         strokeCount.text = newStroke.ToString();
     }
 
-    public void UIUpdatePar(int newPar)
+    public void UIUpdatePar(string newPar)
     {
-        holePar.text = newPar.ToString();
+		holePar.text = newPar;
     }
 
     public void UIUpdateScorecard(int par, int holescore, int gamescore) {

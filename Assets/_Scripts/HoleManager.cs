@@ -10,6 +10,7 @@ public class HoleManager : MonoBehaviour {
     public BuggyScript player;
     public holeScript hole;
     public int holePar = 1;
+	public int playerPar = 0;
     public string holeName;
     
 
@@ -21,6 +22,7 @@ public class HoleManager : MonoBehaviour {
     public CarManager carManager;
     public BallManager ballManager;
     public ClubManager clubManager;
+	public PlayerManager playerManager;
 
     [Header("Stroke Tracking")]
     public int currentStroke;
@@ -29,13 +31,52 @@ public class HoleManager : MonoBehaviour {
 
     public void Start() {
         currentStroke = 1;
-        uiManager.UIUpdateStroke(currentStroke);
-        uiManager.UIUpdatePar(holePar);
+
+		//Link the managers
+		holeManager = GameObject.FindGameObjectWithTag("HoleManager").GetComponent<HoleManager>();
+		scoreManager = GameObject.FindGameObjectWithTag("ScoreManager").GetComponent<ScoreManager>();
+		uiManager = GameObject.FindGameObjectWithTag("UIManager").GetComponent<UIManager>();
+		cameraManager = GameObject.FindGameObjectWithTag("CameraManager").GetComponent<CameraManager>();
+		carManager = GameObject.FindGameObjectWithTag("CarManager").GetComponent<CarManager>();
+		ballManager = GameObject.FindGameObjectWithTag("BallManager").GetComponent<BallManager>();
+		clubManager = GameObject.FindGameObjectWithTag("ClubManager").GetComponent<ClubManager>();
+		playerManager = GameObject.FindGameObjectWithTag("PlayerManager").GetComponent<PlayerManager>();
+
+		//Calculate player's par based on handicap
+		SetPlayerPar (playerManager.playerHandicap);
+
+		//Update UI before we modify the hole par
+		uiManager.UIUpdateStroke(currentStroke);
+		uiManager.UIUpdatePar(playerPar.ToString() + "(" + holePar.ToString() + ")");
+
+		//Set par for the hole adjusted for handicap
+		SetHolePar(playerPar);
+
     }
 
     public void SetHolePar(int newPar) {
         holePar = newPar;
     }
+
+	void SetPlayerPar(int handicapLevel) {
+		switch (handicapLevel) {
+		case 3: // Hard
+			playerPar = holePar-1;
+			break;
+		case 2: // Medium
+			playerPar = holePar;
+			break;
+		case 1: // Easy
+			playerPar = holePar+1;
+			break;
+		default: // Nothing
+			playerPar = holePar;
+			break;
+
+
+
+		}
+	}
 
     public void HolePlayStart() {
         cameraManager.CameraHoleStart();
@@ -47,7 +88,7 @@ public class HoleManager : MonoBehaviour {
         holeOver = true;
         scoreManager.AddLocalScore(currentStroke - holePar); // Calculate and add score to the leaderboard local variable
         uiManager.UIUpdateStroke(currentStroke); // Update UI
-        uiManager.UIUpdatePar(holePar);
+		uiManager.UIUpdatePar(holePar.ToString());
         int local = scoreManager.GetLocalScore(); // Retrieve calculation of local score
         uiManager.UIUpdateScorecard(holePar, currentStroke, local); // Update Scorecard UI with all of this
         uiManager.scorecard.canvas.enabled = true;
@@ -65,5 +106,5 @@ public class HoleManager : MonoBehaviour {
     public void NextHole() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
-    
+
 }
