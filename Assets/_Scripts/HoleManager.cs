@@ -29,8 +29,13 @@ public class HoleManager : MonoBehaviour {
     public bool strokeOver = false; // Play has stopped
     public bool holeOver = false; // Placholder bool, may use by something else
 
+	[Header("Debug")]
+	public GameObject playerManagerPrefab;
+
     public void Start() {
         currentStroke = 1;
+
+		playerManager = null;
 
 		//Link the managers
 		holeManager = GameObject.FindGameObjectWithTag("HoleManager").GetComponent<HoleManager>();
@@ -40,7 +45,21 @@ public class HoleManager : MonoBehaviour {
 		carManager = GameObject.FindGameObjectWithTag("CarManager").GetComponent<CarManager>();
 		ballManager = GameObject.FindGameObjectWithTag("BallManager").GetComponent<BallManager>();
 		clubManager = GameObject.FindGameObjectWithTag("ClubManager").GetComponent<ClubManager>();
-		playerManager = GameObject.FindGameObjectWithTag("PlayerManager").GetComponent<PlayerManager>();
+
+		//FOR TESTING if a playermanager doesn't exist (comes from main menu), create one
+		GameObject pm = GameObject.FindGameObjectWithTag("PlayerManager");
+		if (pm != null) {
+
+			playerManager = GameObject.FindGameObjectWithTag("PlayerManager").GetComponent<PlayerManager>();
+
+		} 
+		else {
+			Debug.Log ("HoleManager: PlayerManager instantiated");
+			playerManager = Instantiate (playerManagerPrefab).GetComponent<PlayerManager> ();
+		}
+
+		//playerManager = GameObject.FindGameObjectWithTag("PlayerManager").GetComponent<PlayerManager>();
+
 
 		//Calculate player's par based on handicap
 		SetPlayerPar (playerManager.playerHandicap);
