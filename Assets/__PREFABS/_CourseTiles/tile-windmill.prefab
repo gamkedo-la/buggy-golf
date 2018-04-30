@@ -29,7 +29,7 @@ GameObject:
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!1 &1032425493166252
 GameObject:
@@ -49,7 +49,7 @@ GameObject:
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!1 &1047954908513434
 GameObject:
@@ -109,7 +109,7 @@ GameObject:
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!1 &1108127866367770
 GameObject:
@@ -149,7 +149,7 @@ GameObject:
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!1 &1170532677485840
 GameObject:
@@ -169,7 +169,7 @@ GameObject:
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!1 &1183039415428544
 GameObject:
@@ -189,7 +189,7 @@ GameObject:
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!1 &1194323996567622
 GameObject:
@@ -209,7 +209,7 @@ GameObject:
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!1 &1195850705960980
 GameObject:
@@ -249,7 +249,7 @@ GameObject:
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!1 &1215379560653734
 GameObject:
@@ -304,7 +304,7 @@ GameObject:
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!1 &1240994123422506
 GameObject:
@@ -324,7 +324,7 @@ GameObject:
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!1 &1259710521099072
 GameObject:
@@ -379,7 +379,7 @@ GameObject:
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!1 &1281721551720230
 GameObject:
@@ -419,7 +419,7 @@ GameObject:
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!1 &1363680023192136
 GameObject:
@@ -439,7 +439,7 @@ GameObject:
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!1 &1365635330164598
 GameObject:
@@ -499,7 +499,7 @@ GameObject:
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!1 &1468949883840938
 GameObject:
@@ -534,7 +534,7 @@ GameObject:
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!1 &1495906888161328
 GameObject:
@@ -589,7 +589,7 @@ GameObject:
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!1 &1649014085829226
 GameObject:
@@ -624,7 +624,7 @@ GameObject:
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!1 &1686618117922980
 GameObject:
@@ -644,7 +644,7 @@ GameObject:
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!1 &1696737216041910
 GameObject:
@@ -664,7 +664,7 @@ GameObject:
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!1 &1718009305795448
 GameObject:
@@ -814,7 +814,7 @@ GameObject:
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!1 &1896899308333592
 GameObject:
@@ -834,7 +834,7 @@ GameObject:
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!1 &1928345621167712
 GameObject:
@@ -915,7 +915,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1718009305795448}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -32, y: 0, z: 0}
+  m_LocalPosition: {x: -64, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4936859305154356}
@@ -2963,7 +2963,7 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1763500566311024}
-  m_Material: {fileID: 13400000, guid: ffd17d5c25de52e4d8ce1cc4c27f810c, type: 2}
+  m_Material: {fileID: 13400000, guid: c30614dec50264749b7ab5f2dbf6019c, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -3005,7 +3005,7 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1327632599895172}
-  m_Material: {fileID: 13400000, guid: ffd17d5c25de52e4d8ce1cc4c27f810c, type: 2}
+  m_Material: {fileID: 13400000, guid: c30614dec50264749b7ab5f2dbf6019c, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -3019,7 +3019,7 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1363680023192136}
-  m_Material: {fileID: 13400000, guid: ffd17d5c25de52e4d8ce1cc4c27f810c, type: 2}
+  m_Material: {fileID: 13400000, guid: c30614dec50264749b7ab5f2dbf6019c, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -3047,7 +3047,7 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1030647283573368}
-  m_Material: {fileID: 13400000, guid: ffd17d5c25de52e4d8ce1cc4c27f810c, type: 2}
+  m_Material: {fileID: 13400000, guid: c30614dec50264749b7ab5f2dbf6019c, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -3061,7 +3061,7 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1660894027727428}
-  m_Material: {fileID: 13400000, guid: ffd17d5c25de52e4d8ce1cc4c27f810c, type: 2}
+  m_Material: {fileID: 13400000, guid: c30614dec50264749b7ab5f2dbf6019c, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -3075,7 +3075,7 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1226000877848970}
-  m_Material: {fileID: 13400000, guid: ffd17d5c25de52e4d8ce1cc4c27f810c, type: 2}
+  m_Material: {fileID: 13400000, guid: c30614dec50264749b7ab5f2dbf6019c, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -3103,7 +3103,7 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1280175848327552}
-  m_Material: {fileID: 13400000, guid: ffd17d5c25de52e4d8ce1cc4c27f810c, type: 2}
+  m_Material: {fileID: 13400000, guid: c30614dec50264749b7ab5f2dbf6019c, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -3131,7 +3131,7 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1032425493166252}
-  m_Material: {fileID: 13400000, guid: ffd17d5c25de52e4d8ce1cc4c27f810c, type: 2}
+  m_Material: {fileID: 13400000, guid: c30614dec50264749b7ab5f2dbf6019c, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -3145,7 +3145,7 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1194323996567622}
-  m_Material: {fileID: 13400000, guid: ffd17d5c25de52e4d8ce1cc4c27f810c, type: 2}
+  m_Material: {fileID: 13400000, guid: c30614dec50264749b7ab5f2dbf6019c, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -3159,7 +3159,7 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1170532677485840}
-  m_Material: {fileID: 13400000, guid: ffd17d5c25de52e4d8ce1cc4c27f810c, type: 2}
+  m_Material: {fileID: 13400000, guid: c30614dec50264749b7ab5f2dbf6019c, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -3173,7 +3173,7 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1686618117922980}
-  m_Material: {fileID: 13400000, guid: ffd17d5c25de52e4d8ce1cc4c27f810c, type: 2}
+  m_Material: {fileID: 13400000, guid: c30614dec50264749b7ab5f2dbf6019c, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -3201,7 +3201,7 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1861797083084692}
-  m_Material: {fileID: 13400000, guid: ffd17d5c25de52e4d8ce1cc4c27f810c, type: 2}
+  m_Material: {fileID: 13400000, guid: c30614dec50264749b7ab5f2dbf6019c, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -3229,7 +3229,7 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1480833192016744}
-  m_Material: {fileID: 13400000, guid: ffd17d5c25de52e4d8ce1cc4c27f810c, type: 2}
+  m_Material: {fileID: 13400000, guid: c30614dec50264749b7ab5f2dbf6019c, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -3243,7 +3243,7 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1896899308333592}
-  m_Material: {fileID: 13400000, guid: ffd17d5c25de52e4d8ce1cc4c27f810c, type: 2}
+  m_Material: {fileID: 13400000, guid: c30614dec50264749b7ab5f2dbf6019c, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -3257,7 +3257,7 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1392634744873682}
-  m_Material: {fileID: 13400000, guid: ffd17d5c25de52e4d8ce1cc4c27f810c, type: 2}
+  m_Material: {fileID: 13400000, guid: c30614dec50264749b7ab5f2dbf6019c, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -3271,7 +3271,7 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1047954908513434}
-  m_Material: {fileID: 13400000, guid: ffd17d5c25de52e4d8ce1cc4c27f810c, type: 2}
+  m_Material: {fileID: 13400000, guid: c30614dec50264749b7ab5f2dbf6019c, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -3285,7 +3285,7 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1696737216041910}
-  m_Material: {fileID: 13400000, guid: ffd17d5c25de52e4d8ce1cc4c27f810c, type: 2}
+  m_Material: {fileID: 13400000, guid: c30614dec50264749b7ab5f2dbf6019c, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -3327,7 +3327,7 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1209449642943844}
-  m_Material: {fileID: 13400000, guid: ffd17d5c25de52e4d8ce1cc4c27f810c, type: 2}
+  m_Material: {fileID: 13400000, guid: c30614dec50264749b7ab5f2dbf6019c, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -3341,7 +3341,7 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1724717316172608}
-  m_Material: {fileID: 13400000, guid: ffd17d5c25de52e4d8ce1cc4c27f810c, type: 2}
+  m_Material: {fileID: 13400000, guid: c30614dec50264749b7ab5f2dbf6019c, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -3355,7 +3355,7 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1079239683920488}
-  m_Material: {fileID: 13400000, guid: ffd17d5c25de52e4d8ce1cc4c27f810c, type: 2}
+  m_Material: {fileID: 13400000, guid: c30614dec50264749b7ab5f2dbf6019c, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -3397,7 +3397,7 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1240994123422506}
-  m_Material: {fileID: 13400000, guid: ffd17d5c25de52e4d8ce1cc4c27f810c, type: 2}
+  m_Material: {fileID: 13400000, guid: c30614dec50264749b7ab5f2dbf6019c, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
