@@ -3719,7 +3719,7 @@ MonoBehaviour:
       offset: {x: 0, y: 0}
       rotation: 0
       justify: 0
-      localPivot: {x: -1, y: 1}
+      localPivot: {x: -1.5, y: 2}
       localSize: {x: 0, y: 0}
       anchor: 9
     _mat: {fileID: 2100000, guid: 4b68156b07d332149a575df807b1e2ba, type: 2}
@@ -3748,7 +3748,7 @@ MonoBehaviour:
       offset: {x: 0, y: 0}
       rotation: 0
       justify: 0
-      localPivot: {x: -16, y: 1}
+      localPivot: {x: -16, y: 2.5466242}
       localSize: {x: 0, y: 0}
       anchor: 9
     _mat: {fileID: 2100000, guid: 4b68156b07d332149a575df807b1e2ba, type: 2}
@@ -3777,7 +3777,7 @@ MonoBehaviour:
       offset: {x: 0, y: 0}
       rotation: 0
       justify: 0
-      localPivot: {x: 1, y: 1}
+      localPivot: {x: 1.5, y: 2}
       localSize: {x: 0, y: 0}
       anchor: 9
     _mat: {fileID: 2100000, guid: 4b68156b07d332149a575df807b1e2ba, type: 2}
@@ -3806,7 +3806,7 @@ MonoBehaviour:
       offset: {x: 0, y: 0}
       rotation: 0
       justify: 0
-      localPivot: {x: 16, y: 1}
+      localPivot: {x: 16, y: 2}
       localSize: {x: 0, y: 0}
       anchor: 9
     _mat: {fileID: 2100000, guid: 4b68156b07d332149a575df807b1e2ba, type: 2}
@@ -3835,7 +3835,7 @@ MonoBehaviour:
       offset: {x: 0, y: 0}
       rotation: 0
       justify: 0
-      localPivot: {x: 1, y: -16}
+      localPivot: {x: 1.5, y: -16}
       localSize: {x: 0, y: 0}
       anchor: 9
     _mat: {fileID: 2100000, guid: 4b68156b07d332149a575df807b1e2ba, type: 2}
@@ -3883,24 +3883,24 @@ MonoBehaviour:
   _vertices:
   - {x: 0, y: 0, z: 0}
   - {x: 2, y: 0, z: 0}
-  - {x: 0, y: 2, z: 0}
-  - {x: 2, y: 2, z: 0}
+  - {x: 0, y: 4, z: 0}
+  - {x: 3, y: 4, z: -0.00000005960465}
   - {x: 2, y: 0, z: 0}
   - {x: 2, y: 0, z: -32}
-  - {x: 2, y: 2, z: 0}
-  - {x: 2, y: 2, z: -32}
+  - {x: 3, y: 4, z: -0.00000005960465}
+  - {x: 3, y: 4, z: -32}
   - {x: 2, y: 0, z: -32}
   - {x: 0, y: 0, z: -32}
-  - {x: 2, y: 2, z: -32}
-  - {x: 0, y: 2, z: -32}
+  - {x: 3, y: 4, z: -32}
+  - {x: 0, y: 4, z: -32}
   - {x: 0, y: 0, z: -32}
   - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 2, z: -32}
-  - {x: 0, y: 2, z: 0}
-  - {x: 0, y: 2, z: 0}
-  - {x: 2, y: 2, z: 0}
-  - {x: 0, y: 2, z: -32}
-  - {x: 2, y: 2, z: -32}
+  - {x: 0, y: 4, z: -32}
+  - {x: 0, y: 4, z: 0}
+  - {x: 0, y: 4, z: 0}
+  - {x: 3, y: 4, z: -0.00000005960465}
+  - {x: 0, y: 4, z: -32}
+  - {x: 3, y: 4, z: -32}
   - {x: 0, y: 0, z: -32}
   - {x: 2, y: 0, z: -32}
   - {x: 0, y: 0, z: 0}
@@ -3908,24 +3908,24 @@ MonoBehaviour:
   _uv:
   - {x: 0, y: 0}
   - {x: -2, y: 0}
-  - {x: 0, y: 2}
-  - {x: -2, y: 2}
-  - {x: 0, y: 0}
-  - {x: -32, y: 0}
-  - {x: 0, y: 2}
-  - {x: -32, y: 2}
+  - {x: 0, y: 4}
+  - {x: -3, y: 4}
+  - {x: 0, y: 0.48507127}
+  - {x: -32, y: 0.48507127}
+  - {x: -0.00000005960465, y: 4.608177}
+  - {x: -32, y: 4.608177}
   - {x: 2, y: 0}
   - {x: 0, y: 0}
-  - {x: 2, y: 2}
-  - {x: 0, y: 2}
+  - {x: 3, y: 4}
+  - {x: 0, y: 4}
   - {x: 32, y: 0}
   - {x: 0, y: 0}
-  - {x: 32, y: 2}
-  - {x: 0, y: 2}
+  - {x: 32, y: 4}
+  - {x: 0, y: 4}
   - {x: 0, y: 0}
-  - {x: 2, y: 0}
+  - {x: 3, y: -0.00000005960465}
   - {x: 0, y: -32}
-  - {x: 2, y: -32}
+  - {x: 3, y: -32}
   - {x: 0, y: -32}
   - {x: -2, y: -32}
   - {x: 0, y: 0}
@@ -6223,7 +6223,7 @@ MonoBehaviour:
       offset: {x: 0, y: 0}
       rotation: 0
       justify: 0
-      localPivot: {x: 0, y: 1}
+      localPivot: {x: 0.5, y: 2}
       localSize: {x: 0, y: 0}
       anchor: 9
     _mat: {fileID: 2100000, guid: 4b68156b07d332149a575df807b1e2ba, type: 2}
@@ -6252,7 +6252,7 @@ MonoBehaviour:
       offset: {x: 0, y: 0}
       rotation: 0
       justify: 0
-      localPivot: {x: -16, y: 1}
+      localPivot: {x: -16, y: 2}
       localSize: {x: 0, y: 0}
       anchor: 9
     _mat: {fileID: 2100000, guid: 4b68156b07d332149a575df807b1e2ba, type: 2}
@@ -6281,7 +6281,7 @@ MonoBehaviour:
       offset: {x: 0, y: 0}
       rotation: 0
       justify: 0
-      localPivot: {x: 0, y: 1}
+      localPivot: {x: -0.5, y: 2}
       localSize: {x: 0, y: 0}
       anchor: 9
     _mat: {fileID: 2100000, guid: 4b68156b07d332149a575df807b1e2ba, type: 2}
@@ -6310,7 +6310,7 @@ MonoBehaviour:
       offset: {x: 0, y: 0}
       rotation: 0
       justify: 0
-      localPivot: {x: 16, y: 1}
+      localPivot: {x: 16, y: 2.3040886}
       localSize: {x: 0, y: 0}
       anchor: 9
     _mat: {fileID: 2100000, guid: 4b68156b07d332149a575df807b1e2ba, type: 2}
@@ -6339,7 +6339,7 @@ MonoBehaviour:
       offset: {x: 0, y: 0}
       rotation: 0
       justify: 0
-      localPivot: {x: 0, y: -16}
+      localPivot: {x: -0.5, y: -16}
       localSize: {x: 0, y: 0}
       anchor: 9
     _mat: {fileID: 2100000, guid: 4b68156b07d332149a575df807b1e2ba, type: 2}
@@ -6387,24 +6387,24 @@ MonoBehaviour:
   _vertices:
   - {x: -1, y: 0, z: 0}
   - {x: 1, y: 0, z: 0}
-  - {x: -1, y: 2, z: 0}
-  - {x: 1, y: 2, z: 0}
+  - {x: -2, y: 4, z: 0.00000005960465}
+  - {x: 1, y: 4, z: 0}
   - {x: 1, y: 0, z: 0}
   - {x: 1, y: 0, z: -32}
-  - {x: 1, y: 2, z: 0}
-  - {x: 1, y: 2, z: -32}
+  - {x: 1, y: 4, z: 0}
+  - {x: 1, y: 4, z: -32}
   - {x: 1, y: 0, z: -32}
   - {x: -1, y: 0, z: -32}
-  - {x: 1, y: 2, z: -32}
-  - {x: -1, y: 2, z: -32}
+  - {x: 1, y: 4, z: -32}
+  - {x: -2, y: 4, z: -32}
   - {x: -1, y: 0, z: -32}
   - {x: -1, y: 0, z: 0}
-  - {x: -1, y: 2, z: -32}
-  - {x: -1, y: 2, z: 0}
-  - {x: -1, y: 2, z: 0}
-  - {x: 1, y: 2, z: 0}
-  - {x: -1, y: 2, z: -32}
-  - {x: 1, y: 2, z: -32}
+  - {x: -2, y: 4, z: -32}
+  - {x: -2, y: 4, z: 0.00000005960465}
+  - {x: -2, y: 4, z: 0.00000005960465}
+  - {x: 1, y: 4, z: 0}
+  - {x: -2, y: 4, z: -32}
+  - {x: 1, y: 4, z: -32}
   - {x: -1, y: 0, z: -32}
   - {x: 1, y: 0, z: -32}
   - {x: -1, y: 0, z: 0}
@@ -6412,23 +6412,23 @@ MonoBehaviour:
   _uv:
   - {x: 1, y: 0}
   - {x: -1, y: 0}
-  - {x: 1, y: 2}
-  - {x: -1, y: 2}
+  - {x: 2, y: 4}
+  - {x: -1, y: 4}
   - {x: 0, y: 0}
   - {x: -32, y: 0}
-  - {x: 0, y: 2}
-  - {x: -32, y: 2}
+  - {x: 0, y: 4}
+  - {x: -32, y: 4}
   - {x: 1, y: 0}
   - {x: -1, y: 0}
-  - {x: 1, y: 2}
-  - {x: -1, y: 2}
-  - {x: 32, y: 0}
-  - {x: 0, y: 0}
-  - {x: 32, y: 2}
-  - {x: 0, y: 2}
-  - {x: -1, y: 0}
+  - {x: 1, y: 4}
+  - {x: -2, y: 4}
+  - {x: 32, y: 0.24253564}
+  - {x: 0, y: 0.24253564}
+  - {x: 32, y: 4.3656416}
+  - {x: -0.00000005960465, y: 4.3656416}
+  - {x: -2, y: 0.00000005960465}
   - {x: 1, y: 0}
-  - {x: -1, y: -32}
+  - {x: -2, y: -32}
   - {x: 1, y: -32}
   - {x: 1, y: -32}
   - {x: -1, y: -32}
