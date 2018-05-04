@@ -6031,6 +6031,11 @@ Prefab:
       propertyPath: m_TagString
       value: HoleDetector
       objectReference: {fileID: 0}
+    - target: {fileID: 23463356458607082, guid: 53d3f3ce0d4d4304a93d39b534e5d36e,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b4a3ec55fbc9d314db0ae11f6a5fda6b, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53d3f3ce0d4d4304a93d39b534e5d36e, type: 2}
   m_IsPrefabParent: 0
