@@ -35,5 +35,9 @@ public class UIManager : MonoBehaviour {
     public void ButtonContinueNextHole() {
         holeManager.NextHole();
     }
+
+	public void UIUpdateHoleName(string newHoleName) {
+		holeName.text = newHoleName;
+	}
         
     }

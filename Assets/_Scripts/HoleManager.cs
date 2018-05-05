@@ -46,7 +46,7 @@ public class HoleManager : MonoBehaviour {
 		ballManager = GameObject.FindGameObjectWithTag("BallManager").GetComponent<BallManager>();
 		clubManager = GameObject.FindGameObjectWithTag("ClubManager").GetComponent<ClubManager>();
 
-		//FOR TESTING if a playermanager doesn't exist (comes from main menu), create one
+		//FOR EDITOR if a playermanager doesn't exist (comes from main menu), create one
 		GameObject pm = GameObject.FindGameObjectWithTag("PlayerManager");
 		if (pm != null) {
 
@@ -59,6 +59,9 @@ public class HoleManager : MonoBehaviour {
 		}
 
 		//playerManager = GameObject.FindGameObjectWithTag("PlayerManager").GetComponent<PlayerManager>();
+
+		//Update the Hole's name in the UI
+		uiManager.UIUpdateHoleName(holeName);
 
 
 		//Calculate player's par based on handicap

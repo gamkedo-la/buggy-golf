@@ -10,6 +10,7 @@ public class holeScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		holeManager = GameObject.FindGameObjectWithTag("HoleManager").GetComponent<HoleManager>();
 		
 	}
 	
