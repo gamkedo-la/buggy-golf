@@ -8,10 +8,14 @@ public class BallScript : MonoBehaviour {
     public float ballRestLimit = 0.5f; // How little should the ball move before we say it is still?
     public float timeBuffer = 1f; // Preventing instant stroke end at walls, etc.
     public bool ballActive = false; // Has the ball been hit?
+    public bool canSpeedUpToSkip = true; // Can speed up the ball roll to skip the scene (doesn't affect physics, for the impatient)?
+    public float speedUpTimeScale = 5f;
     public string holeTagName = "Hole Detector";
 
-    Rigidbody rb;
-       
+    [Header("Inputs")]
+    public string skipInput = "Jump";
+
+    Rigidbody rb;       
 
 	// Use this for initialization
 	void Start () {
@@ -23,6 +27,13 @@ public class BallScript : MonoBehaviour {
         if (rb.velocity.magnitude < ballRestLimit && ballActive) { // If ball has effectively stopped moving, end the stroke
             StartCoroutine("EndStrokeCheck");
             
+        }
+
+        if (ballActive && canSpeedUpToSkip && Input.GetButton(skipInput)) {
+            Time.timeScale = speedUpTimeScale;
+        }
+        else {
+            Time.timeScale = 1f;
         }
 	}
 
