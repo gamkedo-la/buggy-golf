@@ -46,7 +46,8 @@ public class BallInPlayScript : MonoBehaviour {
 
     public void PositionBuggy(Vector3 buggyPosition) {
         Transform buggyTrans = buggyScript.gameObject.transform;
-        buggyScript.buggyRb.MovePosition(buggyPosition);        
+        buggyTrans.position = buggyPosition;
+        buggyScript.buggyRb.position = buggyTrans.position;
         buggyTrans.LookAt(holeManager.ball.gameObject.transform);        
     }
 
