@@ -74,6 +74,9 @@ public class HoleManager : MonoBehaviour {
 		//Set par for the hole adjusted for handicap
 		SetHolePar(playerPar);
 
+        //Update Running Score
+        uiManager.UIUpdateScore(playerManager.localScoreHolder);
+
     }
 
     public void SetHolePar(int newPar) {
@@ -112,6 +115,7 @@ public class HoleManager : MonoBehaviour {
         uiManager.UIUpdateStroke(currentStroke); // Update UI
 		uiManager.UIUpdatePar(holePar.ToString());
         int local = scoreManager.GetLocalScore(); // Retrieve calculation of local score
+        playerManager.HoldScore(local);
         uiManager.UIUpdateScorecard(holePar, currentStroke, local); // Update Scorecard UI with all of this
         uiManager.scorecard.canvas.enabled = true;
     }

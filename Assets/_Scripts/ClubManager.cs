@@ -7,6 +7,7 @@ public class ClubManager : MonoBehaviour {
 
     public List<ClubScript> clubs; // Our list of clubs
     public string clubButton;
+    UIManager uIManager;
 
     // Keep track of what club we're on
     int clubCount;
@@ -19,6 +20,8 @@ public class ClubManager : MonoBehaviour {
 
     // TODO - Make clubs autopopulate from children
     void Start () {
+        uIManager = GameObject.FindGameObjectWithTag("UIManager").GetComponent<UIManager>();
+        clubUI = uIManager.clubIcon.GetComponent<Image>();
         clubCount = clubs.Count; // How many clubs are in the list?
         for (int i = 0; i < clubs.Count; i++) {
             clubs[i].gameObject.SetActive(false); // Deactivate all clubs in case we forgot to elsewhere

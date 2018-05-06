@@ -9,6 +9,7 @@ public class PlayerManager : MonoBehaviour {
 	int currentPlayer = 1;
 	public int testLevel = 0;
 	public int playerHandicap = 0;
+    public int localScoreHolder;
 
 
 	// Use this for initialization
@@ -31,4 +32,8 @@ public class PlayerManager : MonoBehaviour {
 	void resetPlayerNumberer() {
 		currentPlayer = 1;
 	}
+
+    public void HoldScore(int score) {
+        localScoreHolder = score;
+    }
 }

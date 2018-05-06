@@ -32,6 +32,10 @@ public class UIManager : MonoBehaviour {
         scorecard.holeScore.text = holescore.ToString();
     }
 
+    public void UIUpdateScore(int score) {
+        currentScore.text = score.ToString();
+    }
+
     public void ButtonContinueNextHole() {
         holeManager.NextHole();
     }

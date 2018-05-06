@@ -31,6 +31,7 @@ public class CarResetter : MonoBehaviour {
     private void Start() {
         limitAreaImage.enabled = false;
         carRepresentationImage.enabled = false;
+        resetterCamera = GameObject.FindGameObjectWithTag("CameraPlayReset").GetComponent<Camera>();
     }
 
     void FixedUpdate() {
