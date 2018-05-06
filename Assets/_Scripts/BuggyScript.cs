@@ -12,6 +12,7 @@ public class BuggyScript : MonoBehaviour {
     public float maxSteeringAngle;
     public string motorAxis;
     public string steeringAxis;
+    public float angularDrag = 1.0f;
 
     [Header("Boost")]
     // Boost Propulsion
@@ -21,7 +22,7 @@ public class BuggyScript : MonoBehaviour {
     public string boostButton = "Boost";
     public float accelForce = 5000f;
     public Vector3 accelForceReadout;
-   // public string boostButton = "Boost";
+    // public string boostButton = "Boost";
 
     [Header("UI")]
     // UI
@@ -42,11 +43,12 @@ public class BuggyScript : MonoBehaviour {
         // Read center of mass calculated by Unity. If we choose, change it.
         buggyRb = GetComponent<Rigidbody>();
         readCenterOfMass = buggyRb.centerOfMass;
+        buggyRb.angularDrag = angularDrag;
+
         if (adjustCenterOfMass){
             buggyRb.centerOfMass = newCenterOfMass;
         }
     }
-
 
     public void FixedUpdate() {
 
