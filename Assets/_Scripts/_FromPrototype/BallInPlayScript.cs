@@ -55,6 +55,9 @@ public class BallInPlayScript : MonoBehaviour {
         models.SetActive(true);
         buggyScript.enabled = true; // Return control of Buggy
         buggyScript.buggyRb.isKinematic = false;
+        buggyScript.StopWheels();
+        buggyScript.buggyRb.velocity = Vector3.zero;
+        buggyScript.buggyRb.angularVelocity = Vector3.zero;
         clubManager.SetClub(0);
         
     }

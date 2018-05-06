@@ -47,6 +47,7 @@ public class ClubManager : MonoBehaviour {
     public void SetClub(int activateClub) { // We only activate a club
         clubs[activateClub].gameObject.SetActive(true); // Activate the new club
         activeClub = activateClub;
+        clubUI.sprite = clubs[activeClub].clubSprite;
     }
 
     public void DisableAllClubs() {

@@ -78,6 +78,14 @@ public class BuggyScript : MonoBehaviour {
         }
    
     }
+
+    public void StopWheels() {
+        foreach (Axle axle in axles)
+        {
+            axle.leftWheel.motorTorque = 0;
+            axle.rightWheel.motorTorque = 0;
+        }
+    }
 }
 
 [System.Serializable]
