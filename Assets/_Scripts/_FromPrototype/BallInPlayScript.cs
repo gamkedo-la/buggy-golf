@@ -46,9 +46,8 @@ public class BallInPlayScript : MonoBehaviour {
 
     public void PositionBuggy(Vector3 buggyPosition) {
         Transform buggyTrans = buggyScript.gameObject.transform;
-        buggyTrans.position = buggyPosition;
-        buggyTrans.LookAt(holeManager.ball.gameObject.transform);
-
+        buggyScript.buggyRb.MovePosition(buggyPosition);        
+        buggyTrans.LookAt(holeManager.ball.gameObject.transform);        
     }
 
     public void BuggyEnable() { // Enable buggy (for stroke reset)
