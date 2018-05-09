@@ -13681,6 +13681,11 @@ Prefab:
       propertyPath: clubUI
       value: 
       objectReference: {fileID: 1579566660}
+    - target: {fileID: 82122687998580722, guid: 1d0443961dcdba246b4fc5c743528509,
+        type: 2}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1d0443961dcdba246b4fc5c743528509, type: 2}
   m_IsPrefabParent: 0
@@ -32268,6 +32273,11 @@ Prefab:
       propertyPath: holeTagName
       value: HoleDetector
       objectReference: {fileID: 0}
+    - target: {fileID: 114556174872253108, guid: 0565e125ea9242b43bd82b752bf1ead8,
+        type: 2}
+      propertyPath: hitSound
+      value: 
+      objectReference: {fileID: 8300000, guid: e1d52c84ae9318b45a09574bc453f8ee, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0565e125ea9242b43bd82b752bf1ead8, type: 2}
   m_IsPrefabParent: 0

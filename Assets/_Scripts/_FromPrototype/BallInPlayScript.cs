@@ -34,7 +34,8 @@ public class BallInPlayScript : MonoBehaviour {
         if (other.gameObject.tag == ballTag) {
             // Switch from the car camera to the ball camera
             holeManager.cameraManager.CameraBallHitSwitch();
-                        
+            SoundManager.instance.bangSound();
+
             // Activate the ball for stroke tracking
             BallScript bs = other.gameObject.GetComponent<BallScript>();
             bs.ballActive = true;

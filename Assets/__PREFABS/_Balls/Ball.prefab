@@ -145,6 +145,10 @@ MonoBehaviour:
   ballRestLimit: 0.5
   timeBuffer: 0.5
   ballActive: 0
+  canSpeedUpToSkip: 1
+  speedUpTimeScale: 5
+  holeTagName: Hole Detector
+  skipInput: Jump
 --- !u!135 &135816143999000482
 SphereCollider:
   m_ObjectHideFlags: 1

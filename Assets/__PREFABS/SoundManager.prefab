@@ -135,4 +135,6 @@ MonoBehaviour:
   rev: {fileID: 8300000, guid: 6e064db2b46e45d47aae9470261e1e19, type: 3}
   boost: {fileID: 8300000, guid: 8f5fb913a36352e41ad064675504c9b7, type: 3}
   boostTailLoop: {fileID: 8300000, guid: 90d2266d137ede4419be7e31910294ad, type: 3}
-  mySource: {fileID: 0}
+  hitSound: {fileID: 8300000, guid: 146d3816b6f584d6ea9bfa4bd43386c2, type: 3}
+  bounceSound: {fileID: 8300000, guid: e19260e5a77194680ac68cbff2a9f482, type: 3}
+  goalSound: {fileID: 8300000, guid: 6af9d5e5d08bf6546861ef2d35b1649e, type: 3}

@@ -15,7 +15,7 @@ public class BallScript : MonoBehaviour {
     [Header("Inputs")]
     public string skipInput = "Jump";
 
-    Rigidbody rb;       
+    Rigidbody rb;
 
 	// Use this for initialization
 	void Start () {
@@ -26,7 +26,6 @@ public class BallScript : MonoBehaviour {
 	void FixedUpdate () {
         if (rb.velocity.magnitude < ballRestLimit && ballActive) { // If ball has effectively stopped moving, end the stroke
             StartCoroutine("EndStrokeCheck");
-            
         }
 
         if (ballActive && canSpeedUpToSkip && Input.GetButton(skipInput)) {
@@ -43,7 +42,13 @@ public class BallScript : MonoBehaviour {
         {
             holeManager.HoleEnd();
             Debug.Log("Ball in hole!");
+            SoundManager.instance.winSong();
         }
+    }
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        SoundManager.instance.bumpSound();
     }
 
     public void BallEndStroke() {
