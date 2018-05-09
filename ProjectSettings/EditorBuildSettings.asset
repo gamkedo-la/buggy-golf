@@ -9,11 +9,17 @@ EditorBuildSettings:
     path: Assets/__Scenes/Menu.unity
     guid: 4051c9acf49ad5d42a92e77e9dd54371
   - enabled: 1
+    path: Assets/__Scenes/_COURSES/Level_1_0.unity
+    guid: 227a60f6ee47a4442b53a92d66f3f9d9
+  - enabled: 1
     path: Assets/__Scenes/_COURSES/Level_1_1.unity
     guid: c52b306ea428a4c499d85241d2ae509f
   - enabled: 1
     path: Assets/__Scenes/_COURSES/Level_1_2.unity
     guid: 5f01cd33b3bc49f4da471517ca3906e6
+  - enabled: 1
+    path: Assets/__Scenes/_COURSES/Level_1_3.unity
+    guid: ca08a3497915ace4e92db40d9ce8f66d
   - enabled: 1
     path: Assets/__Scenes/_COURSES/Level_1_4.unity
     guid: 8f66e706ec699574ba9d0b0ce6067040

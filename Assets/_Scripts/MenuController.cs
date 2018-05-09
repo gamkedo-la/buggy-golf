@@ -10,8 +10,8 @@ public class MenuController : MonoBehaviour {
 	void Start () {
 	}
 
-	public void PlayGame(){
-		SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex + 1);
+	public void PlayGame(string sceneName){
+		SceneManager.LoadScene (sceneName);
     }
 
 	public void QuitGame(){
