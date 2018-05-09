@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0004288546, g: 0.00042389182, b: 0.0004288546, a: 1}
+  m_IndirectSpecularColor: {r: 0.00564986, g: 0.0055924524, b: 0.00564986, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -4331,11 +4331,6 @@ MonoBehaviour:
     & Scripting, Lighting & Post FX, Skyboxes
 
 
-    Chris DeLeon
-
-    Golf Concept, Shark Buggy, Speedometer art & scripting, Club Head
-
-
     Vignesh Ramesh
 
     Main Menu Scripting and design, Menu Music, Level Music
@@ -4347,19 +4342,24 @@ MonoBehaviour:
     Straights, Slope, Tunnel, Windmill), Course Kit Materials
 
 
+    Chris DeLeon
+
+    Shark Buggy model, Speedometer art & scripting
+
+
     Miles Robinson
 
     Sound Manager Scripting, Buggy SFX, Keyboard Controls
 
 
-    Rany Tan Shaoxian
+    Randy Tan Shaoxian
 
-    Leaderboard System Scripting
+    Leaderboard System Scripting (WIP)
 
 
     Gerard Belenguer Prous
 
-    Buggy Handling & physics
+    Buggy Handling & physics (update coming soon)
 
 '
 --- !u!222 &656909793
