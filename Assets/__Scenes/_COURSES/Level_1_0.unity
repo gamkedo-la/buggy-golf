@@ -6147,6 +6147,11 @@ Prefab:
       propertyPath: holeManager
       value: 
       objectReference: {fileID: 1696148134}
+    - target: {fileID: 114314607048976102, guid: e7cfecda12b804a0291deedbc7f3ad06,
+        type: 2}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7cfecda12b804a0291deedbc7f3ad06, type: 2}
   m_IsPrefabParent: 0
@@ -26026,7 +26031,7 @@ Prefab:
     - target: {fileID: 114327804457433828, guid: b2ec40c3b73d61547a50724455516c7a,
         type: 2}
       propertyPath: holeName
-      value: The Blue Marble
+      value: Cool Crest
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b2ec40c3b73d61547a50724455516c7a, type: 2}

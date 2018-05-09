@@ -66389,7 +66389,7 @@ Prefab:
     - target: {fileID: 114327804457433828, guid: b2ec40c3b73d61547a50724455516c7a,
         type: 2}
       propertyPath: holeName
-      value: The Blue Marble
+      value: Pin in the Wall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b2ec40c3b73d61547a50724455516c7a, type: 2}
