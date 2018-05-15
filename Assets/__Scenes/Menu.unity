@@ -2596,11 +2596,11 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -3252,6 +3252,7 @@ GameObject:
   m_Component:
   - component: {fileID: 543686272}
   - component: {fileID: 543686273}
+  - component: {fileID: 543686274}
   m_Layer: 0
   m_Name: masterVolumeSlider
   m_TagString: Untagged
@@ -3321,12 +3322,37 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1106036037}
+        m_MethodName: setMasterVol
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 543686273}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Slider, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &543686274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 543686271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79a7d522e2bbf440b9d669d5aa00fcd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forMaster: 1
+  forMusic: 0
+  forSound: 0
 --- !u!43 &543845811
 Mesh:
   m_ObjectHideFlags: 0
@@ -3826,11 +3852,11 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -6141,11 +6167,11 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -6759,6 +6785,7 @@ GameObject:
   - component: {fileID: 1106036031}
   - component: {fileID: 1106036035}
   - component: {fileID: 1106036036}
+  - component: {fileID: 1106036037}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -6920,6 +6947,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   profile: {fileID: 11400000, guid: e18f31c4b81637145bb6473edbea29b1, type: 2}
+--- !u!114 &1106036037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1106036030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8565a238a359b145a6aae2631d51922, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMainMenuJustForVolSet: 1
+  musicSource: {fileID: 1106036035}
+  rev: {fileID: 0}
+  boost: {fileID: 0}
+  boostTailLoop: {fileID: 0}
+  hitSound: {fileID: 8300000, guid: 146d3816b6f584d6ea9bfa4bd43386c2, type: 3}
+  bounceSound: {fileID: 0}
+  goalSound: {fileID: 0}
 --- !u!1 &1135901116
 GameObject:
   m_ObjectHideFlags: 0
@@ -7049,11 +7095,11 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -7338,6 +7384,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1250350268}
   - component: {fileID: 1250350269}
+  - component: {fileID: 1250350270}
   m_Layer: 0
   m_Name: sfxVolumeSlider
   m_TagString: Untagged
@@ -7407,12 +7454,48 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1106036037}
+        m_MethodName: setSoundVol
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1250350269}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Slider, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1106036037}
+        m_MethodName: bangSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &1250350270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1250350267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79a7d522e2bbf440b9d669d5aa00fcd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forMaster: 0
+  forMusic: 0
+  forSound: 1
 --- !u!43 &1290368751
 Mesh:
   m_ObjectHideFlags: 0
@@ -9015,6 +9098,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1526617109}
   - component: {fileID: 1526617110}
+  - component: {fileID: 1526617111}
   m_Layer: 0
   m_Name: musicVolumeSlider
   m_TagString: Untagged
@@ -9084,12 +9168,37 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1106036037}
+        m_MethodName: setMusicVol
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1526617110}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Slider, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &1526617111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1526617108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79a7d522e2bbf440b9d669d5aa00fcd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forMaster: 0
+  forMusic: 1
+  forSound: 0
 --- !u!1 &1561574644
 GameObject:
   m_ObjectHideFlags: 0
@@ -9809,11 +9918,11 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -11250,11 +11359,11 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:

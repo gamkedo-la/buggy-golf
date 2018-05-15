@@ -16437,6 +16437,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 18
       objectReference: {fileID: 0}
+    - target: {fileID: 114854995019303312, guid: 6c09f78fcb535e04a92df75b1322e22e,
+        type: 2}
+      propertyPath: musicSource
+      value: 
+      objectReference: {fileID: 1989989790}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6c09f78fcb535e04a92df75b1322e22e, type: 2}
   m_IsPrefabParent: 0
@@ -30302,6 +30307,11 @@ Mesh:
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
   m_MeshOptimized: 0
+--- !u!82 &1989989790 stripped
+AudioSource:
+  m_PrefabParentObject: {fileID: 82122687998580722, guid: 1d0443961dcdba246b4fc5c743528509,
+    type: 2}
+  m_PrefabInternal: {fileID: 881328883}
 --- !u!43 &1996669936
 Mesh:
   m_ObjectHideFlags: 0

@@ -132,6 +132,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8565a238a359b145a6aae2631d51922, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isMainMenuJustForVolSet: 0
+  musicSource: {fileID: 0}
   rev: {fileID: 8300000, guid: 6e064db2b46e45d47aae9470261e1e19, type: 3}
   boost: {fileID: 8300000, guid: 8f5fb913a36352e41ad064675504c9b7, type: 3}
   boostTailLoop: {fileID: 8300000, guid: 90d2266d137ede4419be7e31910294ad, type: 3}

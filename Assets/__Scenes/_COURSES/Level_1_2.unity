@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.011993991, g: 0.0122741405, b: 0.013389127, a: 1}
+  m_IndirectSpecularColor: {r: 0.11204005, g: 0.113654785, b: 0.11987693, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -15944,6 +15944,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1d0443961dcdba246b4fc5c743528509, type: 2}
   m_IsPrefabParent: 0
+--- !u!82 &881328884 stripped
+AudioSource:
+  m_PrefabParentObject: {fileID: 82122687998580722, guid: 1d0443961dcdba246b4fc5c743528509,
+    type: 2}
+  m_PrefabInternal: {fileID: 881328883}
 --- !u!43 &892736336
 Mesh:
   m_ObjectHideFlags: 0
@@ -18698,6 +18703,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 19
       objectReference: {fileID: 0}
+    - target: {fileID: 114854995019303312, guid: 6c09f78fcb535e04a92df75b1322e22e,
+        type: 2}
+      propertyPath: musicSource
+      value: 
+      objectReference: {fileID: 881328884}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6c09f78fcb535e04a92df75b1322e22e, type: 2}
   m_IsPrefabParent: 0

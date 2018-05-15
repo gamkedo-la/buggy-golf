@@ -1,8 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SoundManager : MonoBehaviour {
+    public bool isMainMenuJustForVolSet = false;
+
+    public AudioSource musicSource;
 
 	public AudioClip rev;
 	public AudioClip boost;
@@ -21,13 +25,27 @@ public class SoundManager : MonoBehaviour {
 
     public static SoundManager instance;
 
+    public static float masterVol = 0.7f;
+    public static float musicVol = 0.7f;
+    public static float soundVol = 0.7f;
+
     // Use this for initialization
     void Start () {
         instance = this;
-        revSource = this.GetComponent<AudioSource>();
-        boostSource = gameObject.AddComponent<AudioSource>();
+
         hitSource = gameObject.AddComponent<AudioSource>();
         hitSource.clip = hitSound;
+
+        updateVolumes();
+
+        if(isMainMenuJustForVolSet) {
+            enabled = false;
+            return;
+        }
+
+        revSource = this.GetComponent<AudioSource>();
+
+        boostSource = gameObject.AddComponent<AudioSource>();
         bumpSource = gameObject.AddComponent<AudioSource>();
         bumpSource.clip = bounceSound;
         goalSource = gameObject.AddComponent<AudioSource>();
@@ -36,6 +54,22 @@ public class SoundManager : MonoBehaviour {
         revSource.clip = rev;
         revSource.loop = true;
         revSource.Play();
+    }
+
+    private void updateVolumes() {
+        musicSource.volume = masterVol * musicVol;
+    }
+
+    public void setMasterVol(Slider changedSlider) {
+        masterVol = changedSlider.value;
+        updateVolumes();
+    }
+    public void setMusicVol(Slider changedSlider) {
+        musicVol = changedSlider.value;
+        updateVolumes();
+    }
+    public void setSoundVol(Slider changedSlider) {
+        soundVol = changedSlider.value;
     }
 
     public void muteCarSound(bool muteCar) {
@@ -51,7 +85,7 @@ public class SoundManager : MonoBehaviour {
             boostSource.loop = false;
         }
         else {
-            revSource.volume = Mathf.Abs(Input.GetAxis("Vertical")) * 0.4f;
+            revSource.volume = Mathf.Abs(Input.GetAxis("Vertical")) * 0.4f * masterVol * soundVol;
 
             if (Input.GetKeyDown(KeyCode.LeftShift))
             {
@@ -67,12 +101,12 @@ public class SoundManager : MonoBehaviour {
 
     public void bangSound()
     {
-        hitSource.volume = 0.5f;
+        hitSource.volume = 0.5f * masterVol * soundVol;
         hitSource.Play();
     }
     public void bumpSound()
     {
-        bumpSource.volume = 0.3f;
+        bumpSource.volume = 0.3f * masterVol * soundVol;
         bumpSource.Play();
     }
 
@@ -80,6 +114,7 @@ public class SoundManager : MonoBehaviour {
     {
         if (goalSource.isPlaying == false)
         {
+            goalSource.volume = masterVol * musicVol;
             goalSource.Play();
         }
     }
@@ -88,7 +123,7 @@ public class SoundManager : MonoBehaviour {
 	{
         boostSource.clip = boost;
         boostSource.loop = true;
-        boostSource.volume = 0.4f;
+        boostSource.volume = 0.4f * masterVol * soundVol;
         boostSource.Play();
 
 	}
@@ -96,7 +131,7 @@ public class SoundManager : MonoBehaviour {
 	{
         boostSource.clip = boostTailLoop;
         boostSource.loop = false;
-        boostSource.volume = 0.4f;
+        boostSource.volume = 0.4f * masterVol * soundVol;
         boostSource.Play();
 
 	}
