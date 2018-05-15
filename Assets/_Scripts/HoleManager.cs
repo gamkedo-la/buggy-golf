@@ -130,7 +130,8 @@ public class HoleManager : MonoBehaviour {
     }
 
     public void NextHole() {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(0);
     }
 
 }
