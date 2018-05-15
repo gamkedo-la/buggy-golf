@@ -60,6 +60,7 @@ public class BallInPlayScript : MonoBehaviour {
         buggyScript.buggyRb.velocity = Vector3.zero;
         buggyScript.buggyRb.angularVelocity = Vector3.zero;
         clubManager.SetClub(0);
+        SoundManager.instance.muteCarSound(false);
         
     }
 
@@ -71,6 +72,6 @@ public class BallInPlayScript : MonoBehaviour {
         clubManager.DisableAllClubs(); // Turn off clubs and their collisions
         yield return new WaitForSeconds(delay);
         models.SetActive(false); // Make the car disappear to avoid weirdness
-        
+        SoundManager.instance.muteCarSound(true);
     }
 }

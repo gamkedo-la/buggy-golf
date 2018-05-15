@@ -13,7 +13,7 @@ public class CarResetter : MonoBehaviour {
     public float placementSpeed = 1; // Placement cursor speed
 
     [Header("Images")]
-    public Image limitAreaImage;
+    public Text limitAreaTip;
     public SpriteRenderer carRepresentationImage;
 
     [Header("Ranges")]
@@ -29,7 +29,7 @@ public class CarResetter : MonoBehaviour {
     public string rayTag = "Ground";
 
     private void Start() {
-        limitAreaImage.enabled = false;
+        limitAreaTip.enabled = false;
         carRepresentationImage.enabled = false;
         resetterCamera = GameObject.FindGameObjectWithTag("CameraPlayReset").GetComponent<Camera>();
     }
@@ -37,13 +37,21 @@ public class CarResetter : MonoBehaviour {
     void FixedUpdate() {
         if (resettingCar) {
             if (Input.GetAxis(horizontalInput) != 0) {
-                carPlacer.transform.Translate(Vector3.right * Input.GetAxis("Horizontal") * placementSpeed);
+                carPlacer.transform.Translate(Vector3.right * Input.GetAxis("Horizontal") * placementSpeed,Space.World);
                 ClampPlacerPosition();
             }
             if (Input.GetAxis(verticalInput) != 0) {
-                carPlacer.transform.Translate(Vector3.up * Input.GetAxis("Tilt") * placementSpeed);
+                carPlacer.transform.Translate(Vector3.forward * Input.GetAxis("Tilt") * placementSpeed,Space.World);
                 ClampPlacerPosition();
             }
+
+            Vector3 centerPos = Vector3.zero;
+            centerPos.x = (rangeXMin+rangeXMax)*0.5f;
+            centerPos.z = (rangeZMin+rangeZMax)* 0.5f;
+            float faceBall = Mathf.Atan2(centerPos.x - carPlacer.transform.localPosition.x,
+                                         centerPos.z - carPlacer.transform.localPosition.z);
+            carPlacer.transform.rotation = Quaternion.AngleAxis(faceBall*Mathf.Rad2Deg , Vector3.up) *
+                Quaternion.AngleAxis(90.0f, Vector3.right);
             if (Input.GetButtonDown(confirmInput)) { // On select, raycast and check for ground, then set the car there
                 RaycastHit hit;
                 Ray ray = new Ray(carPlacer.transform.position, (transform.up*(-1)));
@@ -78,13 +86,13 @@ public class CarResetter : MonoBehaviour {
 
     public void ResetterStartReset() {
         resettingCar = true;
-        limitAreaImage.enabled = true;
+        limitAreaTip.enabled = true;
         carRepresentationImage.enabled = true;
     }
 
     public void ResetterEndReset() {
         resettingCar = false;
-        limitAreaImage.enabled = false;
+        limitAreaTip.enabled = false;
         carRepresentationImage.enabled = false;
     }
 

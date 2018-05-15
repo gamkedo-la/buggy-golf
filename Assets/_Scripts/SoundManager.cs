@@ -17,6 +17,7 @@ public class SoundManager : MonoBehaviour {
     private AudioSource hitSource;
     private AudioSource bumpSource;
     private AudioSource goalSource;
+    private bool isCarMuted = false;
 
     public static SoundManager instance;
 
@@ -37,26 +38,41 @@ public class SoundManager : MonoBehaviour {
         revSource.Play();
     }
 
-    // Update is called once per frame
-    void Update () {
-        revSource.volume = Mathf.Abs(Input.GetAxis("Vertical"));
+    public void muteCarSound(bool muteCar) {
+        isCarMuted = muteCar;
+    }
 
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+    // Update is called once per frame
+    void Update()
+    {
+        if (isCarMuted)
         {
-            PlayBoostOneOff();
-        } else if (Input.GetKeyUp(KeyCode.LeftShift))
-        {
-            PlayBoostTailLoop();
+            revSource.volume = 0.0f;
+            boostSource.loop = false;
+        }
+        else {
+            revSource.volume = Mathf.Abs(Input.GetAxis("Vertical")) * 0.4f;
+
+            if (Input.GetKeyDown(KeyCode.LeftShift))
+            {
+                PlayBoostOneOff();
+            }
+            else if (Input.GetKeyUp(KeyCode.LeftShift))
+            {
+                PlayBoostTailLoop();
+            }
         }
 
     }
 
     public void bangSound()
     {
+        hitSource.volume = 0.5f;
         hitSource.Play();
     }
     public void bumpSound()
     {
+        bumpSource.volume = 0.3f;
         bumpSource.Play();
     }
 
@@ -72,6 +88,7 @@ public class SoundManager : MonoBehaviour {
 	{
         boostSource.clip = boost;
         boostSource.loop = true;
+        boostSource.volume = 0.4f;
         boostSource.Play();
 
 	}
@@ -79,6 +96,7 @@ public class SoundManager : MonoBehaviour {
 	{
         boostSource.clip = boostTailLoop;
         boostSource.loop = false;
+        boostSource.volume = 0.4f;
         boostSource.Play();
 
 	}

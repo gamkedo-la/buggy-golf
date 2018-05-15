@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.011970944, g: 0.012330785, b: 0.013387049, a: 1}
+  m_IndirectSpecularColor: {r: 0.11190624, g: 0.11397868, b: 0.119865604, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -6147,11 +6147,6 @@ Prefab:
       propertyPath: holeManager
       value: 
       objectReference: {fileID: 1696148134}
-    - target: {fileID: 114314607048976102, guid: e7cfecda12b804a0291deedbc7f3ad06,
-        type: 2}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7cfecda12b804a0291deedbc7f3ad06, type: 2}
   m_IsPrefabParent: 0
@@ -32264,25 +32259,6 @@ Prefab:
       propertyPath: holeManager
       value: 
       objectReference: {fileID: 1696148134}
-    - target: {fileID: 114556174872253108, guid: 0565e125ea9242b43bd82b752bf1ead8,
-        type: 2}
-      propertyPath: ballRestLimit
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1185878253157778, guid: 0565e125ea9242b43bd82b752bf1ead8, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114556174872253108, guid: 0565e125ea9242b43bd82b752bf1ead8,
-        type: 2}
-      propertyPath: holeTagName
-      value: HoleDetector
-      objectReference: {fileID: 0}
-    - target: {fileID: 114556174872253108, guid: 0565e125ea9242b43bd82b752bf1ead8,
-        type: 2}
-      propertyPath: hitSound
-      value: 
-      objectReference: {fileID: 8300000, guid: e1d52c84ae9318b45a09574bc453f8ee, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0565e125ea9242b43bd82b752bf1ead8, type: 2}
   m_IsPrefabParent: 0
