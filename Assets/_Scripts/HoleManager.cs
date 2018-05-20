@@ -69,7 +69,7 @@ public class HoleManager : MonoBehaviour {
 
 		//Update UI before we modify the hole par
 		uiManager.UIUpdateStroke(currentStroke);
-		uiManager.UIUpdatePar(playerPar.ToString() + "(" + holePar.ToString() + ")");
+		uiManager.UIUpdatePar(playerPar.ToString() /*+ "(" + holePar.ToString() + ")"*/);
 
 		//Set par for the hole adjusted for handicap
 		SetHolePar(playerPar);
