@@ -14777,6 +14777,11 @@ Prefab:
       propertyPath: holeManager
       value: 
       objectReference: {fileID: 1696148134}
+    - target: {fileID: 224047783652606944, guid: e7cfecda12b804a0291deedbc7f3ad06,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.000030517578
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7cfecda12b804a0291deedbc7f3ad06, type: 2}
   m_IsPrefabParent: 0

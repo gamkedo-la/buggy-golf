@@ -116,7 +116,7 @@ public class HoleManager : MonoBehaviour {
 		uiManager.UIUpdatePar(holePar.ToString());
         int local = scoreManager.GetLocalScore(); // Retrieve calculation of local score
         playerManager.HoldScore(local);
-        uiManager.UIUpdateScorecard(holePar, currentStroke, local); // Update Scorecard UI with all of this
+		uiManager.UIUpdateScorecard(holePar, currentStroke, local, holeName); // Update Scorecard UI with all of this
         uiManager.scorecard.canvas.enabled = true;
     }
 

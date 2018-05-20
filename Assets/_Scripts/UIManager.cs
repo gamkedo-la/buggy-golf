@@ -26,15 +26,17 @@ public class UIManager : MonoBehaviour {
 		holePar.text = newPar;
     }
 
-    public void UIUpdateScorecard(int par, int holescore, int gamescore) {
+	public void UIUpdateScorecard(int par, int holescore, int gamescore, string name) {
         scorecard.par.text = par.ToString();
         scorecard.gameScore.text = gamescore.ToString();
         scorecard.holeScore.text = holescore.ToString();
+		scorecard.holeName.text = name;
     }
 
     public void UIUpdateScore(int score) {
         currentScore.text = score.ToString();
     }
+		
 
     public void ButtonContinueNextHole() {
         holeManager.NextHole();

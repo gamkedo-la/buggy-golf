@@ -1357,6 +1357,7 @@ MonoBehaviour:
   - 400
   - 600
   - 800
+  slowDown: 1000
 --- !u!114 &114460457957775738
 MonoBehaviour:
   m_ObjectHideFlags: 1
