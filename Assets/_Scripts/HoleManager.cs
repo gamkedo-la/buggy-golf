@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class HoleManager : MonoBehaviour {
 
@@ -12,6 +13,7 @@ public class HoleManager : MonoBehaviour {
     public int holePar = 1;
 	public int playerPar = 0;
     public string holeName;
+
     
 
     [Header("Managers")]
@@ -28,9 +30,14 @@ public class HoleManager : MonoBehaviour {
     public int currentStroke;
     public bool strokeOver = false; // Play has stopped
     public bool holeOver = false; // Placholder bool, may use by something else
+	public OutOfPlayScript outOfPlayScript;
+	public Vector3 lastBallPosition;
 
 	[Header("Debug")]
 	public GameObject playerManagerPrefab;
+
+	[Header("Misc")]
+	public Text boostTip;
 
     public void Start() {
         currentStroke = 1;
@@ -45,30 +52,22 @@ public class HoleManager : MonoBehaviour {
 		carManager = GameObject.FindGameObjectWithTag("CarManager").GetComponent<CarManager>();
 		ballManager = GameObject.FindGameObjectWithTag("BallManager").GetComponent<BallManager>();
 		clubManager = GameObject.FindGameObjectWithTag("ClubManager").GetComponent<ClubManager>();
+		boostTip = GameObject.FindGameObjectWithTag("BoostTip").GetComponent<Text>();
+		outOfPlayScript = GameObject.FindGameObjectWithTag("OutOfPlay").GetComponent<OutOfPlayScript>();
 
 		//FOR EDITOR if a playermanager doesn't exist (comes from main menu), create one
 		GameObject pm = GameObject.FindGameObjectWithTag("PlayerManager");
 		if (pm != null) {
-
 			playerManager = GameObject.FindGameObjectWithTag("PlayerManager").GetComponent<PlayerManager>();
-
-		} 
-		else {
+		} else {
 			Debug.Log ("HoleManager: PlayerManager instantiated");
 			playerManager = Instantiate (playerManagerPrefab).GetComponent<PlayerManager> ();
 		}
 
-		//playerManager = GameObject.FindGameObjectWithTag("PlayerManager").GetComponent<PlayerManager>();
-
-		//Update the Hole's name in the UI
-		uiManager.UIUpdateHoleName(holeName);
-
-
-		//Calculate player's par based on handicap
-		SetPlayerPar (playerManager.playerHandicap);
-
-		//Update UI before we modify the hole par
-		uiManager.UIUpdateStroke(currentStroke);
+		// UI UPDATES
+		uiManager.UIUpdateHoleName(holeName); //Update the Hole's name in the UI
+		SetPlayerPar (playerManager.playerHandicap); //Calculate player's par based on handicap
+		uiManager.UIUpdateStroke(currentStroke); // Update Stroke count in the UI
 		uiManager.UIUpdatePar(playerPar.ToString() /*+ "(" + holePar.ToString() + ")"*/);
 
 		//Set par for the hole adjusted for handicap
@@ -76,6 +75,9 @@ public class HoleManager : MonoBehaviour {
 
         //Update Running Score
         uiManager.UIUpdateScore(playerManager.localScoreHolder);
+
+		//Get Ball position for possible mulligan/out of play
+		SetBallLastPosition();
 
     }
 
@@ -109,7 +111,8 @@ public class HoleManager : MonoBehaviour {
         uiManager.scorecard.canvas.enabled = false;
     }
 
-    public void HoleEnd() {
+    // ACTIONS WHEN WE COMPLETE A HOLE
+	public void HoleEnd() {
         holeOver = true;
         scoreManager.AddLocalScore(currentStroke - holePar); // Calculate and add score to the leaderboard local variable
         uiManager.UIUpdateStroke(currentStroke); // Update UI
@@ -118,16 +121,27 @@ public class HoleManager : MonoBehaviour {
         playerManager.HoldScore(local);
 		uiManager.UIUpdateScorecard(holePar, currentStroke, local, holeName); // Update Scorecard UI with all of this
         uiManager.scorecard.canvas.enabled = true;
+		boostTip.enabled = false;
     }
 
-    public void StrokeReset() {
+	// ACTIONS WHEN WE END A SHOT
+	public void StrokeReset(bool mulligan) {
         strokeOver = true; // Use this to keep certain things from happening in other scripts (car control, etc)
-        ballManager.ReorientBall(ball); // Keep the ball in position but make it point straight up
+		if (mulligan) { // Is this a successful hit or are we resetting and losing a stroke?
+			ballManager.ResetBallToLast(ball, lastBallPosition);
+		} else {
+			ballManager.ReorientBall(ball); // Keep the ball in position but make it point straight up
+		}
         currentStroke++;
         uiManager.UIUpdateStroke(currentStroke); // Update the stroke count UI
         cameraManager.CameraPlayResetSwitch(); // Change camera to top view to choose starting position
         uiManager.carResetter.ResetterStartReset();
+		SetBallLastPosition ();
     }
+
+	public void SetBallLastPosition(){
+		lastBallPosition = ball.gameObject.transform.position;
+	}
 
     public void NextHole() {
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);

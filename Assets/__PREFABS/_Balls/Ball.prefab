@@ -148,6 +148,7 @@ MonoBehaviour:
   canSpeedUpToSkip: 1
   speedUpTimeScale: 5
   holeTagName: HoleDetector
+  outOfPlayName: OutOfPlay
   skipInput: Jump
 --- !u!135 &135816143999000482
 SphereCollider:

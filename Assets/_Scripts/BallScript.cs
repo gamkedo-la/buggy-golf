@@ -11,6 +11,7 @@ public class BallScript : MonoBehaviour {
     public bool canSpeedUpToSkip = true; // Can speed up the ball roll to skip the scene (doesn't affect physics, for the impatient)?
     public float speedUpTimeScale = 5f;
     public string holeTagName = "Hole Detector";
+	public string outOfPlayName = "OutOfPlay";
 
     [Header("Inputs")]
     public string skipInput = "Jump";
@@ -24,10 +25,12 @@ public class BallScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-        if (rb.velocity.magnitude < ballRestLimit && ballActive) { // If ball has effectively stopped moving, end the stroke
+		// If ball has effectively stopped moving, end the stroke
+		if (rb.velocity.magnitude < ballRestLimit && ballActive) { 
             StartCoroutine("EndStrokeCheck");
         }
 
+		// Speed up time if skip button is pressed
         if (ballActive && canSpeedUpToSkip && Input.GetButton(skipInput)) {
             Time.timeScale = speedUpTimeScale;
         }
@@ -38,12 +41,22 @@ public class BallScript : MonoBehaviour {
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.tag == holeTagName && ballActive)
+        
+		// See if ball is in the hole
+		if (other.tag == holeTagName && ballActive)
         {
             holeManager.HoleEnd();
             Debug.Log("Ball in hole!");
             SoundManager.instance.winSong();
         }
+
+		// See if ball is out of play
+		if (other.tag == outOfPlayName && ballActive)
+		{
+			ballActive = false;
+			BallEndStroke(true);
+			Debug.Log("Ball out of play!");
+		}
     }
 
     public void OnCollisionEnter(Collision collision)
@@ -51,9 +64,9 @@ public class BallScript : MonoBehaviour {
         SoundManager.instance.bumpSound();
     }
 
-    public void BallEndStroke() {
+	public void BallEndStroke(bool mulligan) {
         rb.isKinematic = true; // Freeze the ball
-        holeManager.StrokeReset(); // Reset play
+		holeManager.StrokeReset(mulligan); // Reset play
         Debug.Log("Stroke is over!");
     }
 
@@ -66,7 +79,7 @@ public class BallScript : MonoBehaviour {
         if (rb.velocity.magnitude < ballRestLimit && ballActive)
         {
             ballActive = false;
-            BallEndStroke();
+            BallEndStroke(false);
         }
     }
 }

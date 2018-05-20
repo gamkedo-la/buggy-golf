@@ -54,9 +54,9 @@ MonoBehaviour:
   ball: {fileID: 0}
   player: {fileID: 0}
   hole: {fileID: 0}
-  holePar: 1
+  holePar: 2
   playerPar: 0
-  holeName: 
+  holeName: Cool Crest
   holeManager: {fileID: 114327804457433828}
   scoreManager: {fileID: 0}
   uiManager: {fileID: 0}
@@ -70,3 +70,4 @@ MonoBehaviour:
   holeOver: 0
   playerManagerPrefab: {fileID: 1688126759262698, guid: 97bedf5f6a45a4ab9a34a61026999018,
     type: 2}
+  boostTip: {fileID: 0}
