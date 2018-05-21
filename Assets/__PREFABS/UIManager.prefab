@@ -1065,10 +1065,10 @@ MonoBehaviour:
   placementSpeed: 0.25
   limitAreaTip: {fileID: 114826979901533978}
   carRepresentationImage: {fileID: 0}
-  rangeXMax: 3.5
-  rangeXMin: -3.5
-  rangeZMax: 3.5
-  rangeZMin: -3.5
+  rangeXMax: 5
+  rangeXMin: -5
+  rangeZMax: 5
+  rangeZMin: -5
   horizontalInput: Horizontal
   verticalInput: Tilt
   confirmInput: Jump
