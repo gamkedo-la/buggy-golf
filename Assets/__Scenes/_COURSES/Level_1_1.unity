@@ -18160,8 +18160,8 @@ ReflectionProbe:
   m_TimeSlicingMode: 0
   m_Resolution: 128
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 96, y: 48, z: 64}
-  m_BoxOffset: {x: -32, y: 15.35, z: 20.059494}
+  m_BoxSize: {x: 96, y: 46.766815, z: 64}
+  m_BoxOffset: {x: -32, y: 15.966592, z: 20.059494}
   m_NearClip: 0.3
   m_FarClip: 300
   m_ShadowDistance: 100
@@ -27715,8 +27715,8 @@ ReflectionProbe:
   m_TimeSlicingMode: 0
   m_Resolution: 128
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 88, y: 26, z: 64}
-  m_BoxOffset: {x: -24, y: 8.5, z: 0}
+  m_BoxSize: {x: 88, y: 25.367188, z: 64}
+  m_BoxOffset: {x: -24, y: 8.816406, z: 0}
   m_NearClip: 0.3
   m_FarClip: 300
   m_ShadowDistance: 100
@@ -37078,7 +37078,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-1035564
+  m_Name: pb_Mesh-285582
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
