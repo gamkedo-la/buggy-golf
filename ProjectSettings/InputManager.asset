@@ -405,3 +405,19 @@ InputManager:
     type: 2
     axis: 2
     joyNum: 0
+  - serializedVersion: 3
+    m_Name: CameraX
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: j
+    positiveButton: k
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 250
+    dead: 0.00001
+    sensitivity: 250
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 2
+    joyNum: 0
