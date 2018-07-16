@@ -12,24 +12,39 @@ public class CarAcrobatics : MonoBehaviour {
 	[SerializeField]
 	float fastTorque, jumpForce, jumpForce2, jumpForce3, multHelpTorque, multFloorTorque, barrelTorqueM;
 	private Rigidbody rb;
-	private float iX, iY; //We'll store input here
+    [HideInInspector]
+    public Rigidbody buggyRb;
+	
+    private float iX, iY; //We'll store input here
 	private float mult = 1f; 
 	private bool upsideD = false; //Tells if car is upside down or not
 	private bool isBoost = false; //Tells if car is boosting or not
 	private bool boostActive = false; //The same thing, it should be refactored
+    private bool hasDJump = false;
+    private bool grounded = false;
+
+    private bool holdForReset = false; //Delay bringing controls online after respawn for stillness
+    private float holdForResetDelayTime = .25f;
+
 	public ParticleSystem boost; //Bosting particle system
 	private ParticleSystem.EmissionModule em;
+    public CarController carCon;
 	public VehicleCameraControl vc;
 	public PostProcessingProfile postProcessing;
 	private CameraShakeInstance ci;
+    public bool useCameraShake = false;
 	public float magnitude, rough, fadeIn, fadeOut; //Properties of the boost camera shake
-	private bool hasDJump = false;
-	private bool grounded = false;
+	
 	public float extraTorque; 
 	public Image boostI; //Ui that inidicates how much boost we have left
 	[SerializeField]
 	float fallMult, lowJumpMult, jumpYSpeed, boostSpeed, boostAmount, boostConsume, boostFill;
 	private float currentBoost;
+
+    // GAME MANAGER STUFF
+    [HideInInspector]
+    public BallInPlayScript ballInPlayScript;
+
 
 	void Awake()
 	{
@@ -39,57 +54,74 @@ public class CarAcrobatics : MonoBehaviour {
 
 	void Start () {
 		rb = GetComponent<Rigidbody>();
+        buggyRb = rb;
+        carCon = GetComponent<CarController>();
 		GetComponentInChildren<BlobFollow>().transform.parent = null;
 		em = boost.emission;
 		em.enabled = false;
 		currentBoost = boostAmount;
+
+        //GAME MANAGER STUFF
+        ballInPlayScript = GameObject.FindGameObjectWithTag("Player").GetComponent<BallInPlayScript>();
 	}
 
 	void FixedUpdate () {
-		iX = Input.GetAxis("Horizontal") * 0.5f;
-		iY = Input.GetAxis("Vertical");
-		grounded = IsGrounded();
-		if (!grounded)
-		{
-			if (upsideD)
-			{
-				mult *= multFloorTorque;
-				rb.AddRelativeTorque(-iY * fastTorque * mult, 0.0f, -iX * fastTorque * mult);
-			}
-			else
-			{
-				AirTorque();
-				JumpGameFeel();
-			}
-		}
+        if (!UIManager.Instance.carResetter.resettingCar && !holdForReset)
+        {
+            iX = Input.GetAxis("Horizontal") * 0.5f;
+            iY = Input.GetAxis("Vertical");
+            grounded = IsGrounded();
+            if (!grounded)
+            {
+                if (upsideD)
+                {
+                    mult *= multFloorTorque;
+                    rb.AddRelativeTorque(-iY * fastTorque * mult, 0.0f, -iX * fastTorque * mult);
+                }
+                else
+                {
+                    AirTorque();
+                    JumpGameFeel();
+                }
+            }
 
-		if (rb.angularVelocity.magnitude > 4.0f || rb.angularVelocity.magnitude < 2f)
-		{
-			mult = multHelpTorque;
-		}
-		else mult = 1f;
-		rb.angularVelocity = Vector3.ClampMagnitude(rb.angularVelocity, 5f);
+            if (rb.angularVelocity.magnitude > 4.0f || rb.angularVelocity.magnitude < 2f)
+            {
+                mult = multHelpTorque;
+            }
+            else mult = 1f;
+            rb.angularVelocity = Vector3.ClampMagnitude(rb.angularVelocity, 5f);
 
-		HandleBoost();
+            HandleBoost();
+        }
+        else
+        {
+            // If we're resetting, kill boost and jump
+
+        }
+
 	}
 
 	void Update()
 	{
-		if (Input.GetButtonDown("Boost2"))
-		{
-			isBoost = true;
-		}
-		else if (Input.GetButtonUp("Boost2") || currentBoost <= 0f)
-		{
-			isBoost = false;
-		}
-		else
-		{
-			if (Input.GetButtonDown("Jump") && grounded)
-			{
-				rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
-			}
-		}
+        if (!UIManager.Instance.carResetter.resettingCar && !holdForReset)
+        {
+            if (Input.GetButtonDown("Boost2"))
+            {
+                isBoost = true;
+            }
+            else if (Input.GetButtonUp("Boost2") || currentBoost <= 0f || UIManager.Instance.carResetter.resettingCar)
+            {
+                isBoost = false;
+            }
+            else
+            {
+                if (Input.GetButtonDown("Jump") && grounded)
+                {
+                    rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
+                }
+            }
+        }
 	}
 
 	private void AirTorque()
@@ -145,7 +177,7 @@ public class CarAcrobatics : MonoBehaviour {
 	{
 		//Debug.Log(rb.velocity.magnitude);
 		rb.velocity = Vector3.ClampMagnitude(rb.velocity, 82f);
-		if (isBoost)
+        if (isBoost)
 		{
 			if (currentBoost > 0f)
 			{
@@ -162,7 +194,10 @@ public class CarAcrobatics : MonoBehaviour {
 				em.enabled = true;
 				boostActive = true;
 				postProcessing.chromaticAberration.enabled = true;
-				ci = CameraShaker.Instance.StartShake(magnitude, rough, fadeIn);
+                if(useCameraShake)
+                {
+                    ci = CameraShaker.Instance.StartShake(magnitude, rough, fadeIn);    
+                }
 				WheelFrictionCurve frictionCurve = wheels.wheelFL.sidewaysFriction;
 				frictionCurve.stiffness = 30f;
 				frictionCurve = wheels.wheelFR.sidewaysFriction;
@@ -178,7 +213,10 @@ public class CarAcrobatics : MonoBehaviour {
 			em.enabled = false;
 			boostActive = false;
 			postProcessing.chromaticAberration.enabled = false;
-			ci.StartFadeOut(fadeOut);
+            if(ci != null)
+            {
+                ci.StartFadeOut(fadeOut);    
+            }
 			WheelFrictionCurve frictionCurve = wheels.wheelFL.sidewaysFriction;
 			frictionCurve.stiffness = 12f;
 			frictionCurve = wheels.wheelFR.sidewaysFriction;
@@ -197,4 +235,35 @@ public class CarAcrobatics : MonoBehaviour {
 			}
 		}
 	}
+
+    public void StopWheels()
+    {
+        carCon.StopWheels(); 
+    }
+
+    public void KillBoostJump()
+    {
+        isBoost = false;
+        grounded = false;
+    }
+
+    public void BuggyResetDelay()
+    {
+        holdForReset = true;
+        StartCoroutine("BuggyResetControlDelay");
+    }
+
+    public void BuggyEnable()
+    {
+        rb.isKinematic = false;
+        StopWheels();
+        rb.velocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;    
+    }
+
+    IEnumerator BuggyResetControlDelay()
+    {
+        yield return new WaitForSeconds(holdForResetDelayTime);
+
+    }
 }

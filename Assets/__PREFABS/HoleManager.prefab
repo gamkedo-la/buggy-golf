@@ -54,20 +54,18 @@ MonoBehaviour:
   ball: {fileID: 0}
   player: {fileID: 0}
   hole: {fileID: 0}
-  holePar: 2
+  holePar: 3
   playerPar: 0
-  holeName: Cool Crest
-  holeManager: {fileID: 114327804457433828}
-  scoreManager: {fileID: 0}
-  uiManager: {fileID: 0}
-  cameraManager: {fileID: 0}
+  holeName: The Blue Marble
+  ballInPlay: {fileID: 0}
+  holeStarted: 0
   carManager: {fileID: 0}
-  ballManager: {fileID: 0}
   clubManager: {fileID: 0}
-  playerManager: {fileID: 0}
   currentStroke: 0
   strokeOver: 0
   holeOver: 0
+  outOfPlayScript: {fileID: 0}
+  lastBallPosition: {x: 0, y: 0, z: 0}
   playerManagerPrefab: {fileID: 1688126759262698, guid: 97bedf5f6a45a4ab9a34a61026999018,
     type: 2}
   boostTip: {fileID: 0}

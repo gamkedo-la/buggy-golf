@@ -6,20 +6,21 @@ public class CamFollowOrbit : MonoBehaviour
 {
 
     public float turnSpeed = 4.0f;
-    public Transform player;
+    public Transform target;
 
     private Vector3 offset;
     public Vector3 position;
 
     void Start()
     {
-        offset = new Vector3(player.position.x + position.x, player.position.y + position.y, player.position.z + position.z) - player.position;
+        offset = new Vector3(target.position.x + position.x, target.position.y + position.y, target.position.z + position.z) - target.position;
     }
 
     void LateUpdate()
     {
-        offset = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * turnSpeed, Vector3.up) * offset;
-        transform.position = player.position + offset;
-        transform.LookAt(player.position);
+        offset = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * turnSpeed * Time.deltaTime, Vector3.up) * offset;
+        transform.position = target.position + offset;
+        transform.LookAt(target.position);
     }
+
 }

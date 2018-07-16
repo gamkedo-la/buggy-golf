@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b317f051da8db8942a426f8bbf15275b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holeManager: {fileID: 0}
   carCam: {fileID: 0}
   ballCam: {fileID: 0}
   playResetCam: {fileID: 0}
+  resetHeightFromBall: 40

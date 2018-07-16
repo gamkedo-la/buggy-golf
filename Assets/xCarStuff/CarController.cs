@@ -205,4 +205,12 @@ public class CarController : MonoBehaviour {
 		}
 	}
 
+    public void StopWheels()
+    {
+        wheels.wheelFL.brakeTorque = 0f;
+        wheels.wheelFR.brakeTorque = 0f;
+        wheels.wheelRL.brakeTorque = 0f;
+        wheels.wheelRR.brakeTorque = 0f;
+    }
+
 }
