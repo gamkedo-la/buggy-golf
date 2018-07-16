@@ -41,8 +41,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1923287057997678}
-  m_LocalRotation: {x: 0.059315067, y: 0, z: 0, w: 0.9982394}
-  m_LocalPosition: {x: -30, y: 2.782759, z: -20.98926}
+  m_LocalRotation: {x: 0.04979666, y: 0, z: 0, w: 0.99875945}
+  m_LocalPosition: {x: -30.00228, y: 2.7948442, z: -24.000286}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -66,7 +66,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 2600
-  field of view: 80
+  field of view: 60
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -196,12 +196,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c01040bbd1a814b13b48c223ce2e6f4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  camera: {fileID: 0}
   turnSpeed: 0.75
-  player: {fileID: 0}
-  distBack: 5
-  distAbove: 2
-  afterLookAngleAdjust: -15
-  afterLookHeightAdjust: 0.25
+  target: {fileID: 0}
+  buggyDistBack: 8
+  buggyDistAbove: 2.25
+  ballDistBack: 11.25
+  ballDistAbove: 2.5
+  buggyAfterLookAngleAdjust: -10
+  buggyAfterLookHeightAdjust: 0
+  ballAfterLookAngleAdjust: 0
+  ballAfterLookHeightAdjust: 0
 --- !u!114 &114161198053671986
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -238,7 +243,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turnSpeed: 0.75
-  player: {fileID: 0}
+  target: {fileID: 0}
   position: {x: 0, y: 2.278229, z: -5.007106}
 --- !u!124 &124030871269239010
 Behaviour:
